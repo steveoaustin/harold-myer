@@ -13,8 +13,8 @@ $sublistLink-height: 1.25rem;
 
 #navBar-infoBar {
   min-height: 1.5rem;
-  background-color: $secondary;
-  color: $secondary-contrast;
+  background-color: $background;
+  color: $background-text;
   display: flex;
   align-items: center;
   font-family: $text-font;
@@ -68,14 +68,14 @@ $sublistLink-height: 1.25rem;
 
 #navBar-navigation,
 #navBar-stickyNavigation {
-  background-color: $light;
+  background-color: $background;
 
   .navBar-mobileNavMenu {
     display: none;
     align-items: center;
-    position: absolute;
-    right: 0.25rem;
-    color: $secondary;
+    margin-left: auto;
+    margin-right: 2.5vw;
+    color: $background-text;
   }
 
   .navBar-linkSlidedown {
@@ -92,7 +92,7 @@ $sublistLink-height: 1.25rem;
           display: inline-flex;
           text-decoration: none;
           font-family: $link-font;
-          color: $secondary;
+          color: $background-text;
           height: 1.25rem;
 
           &:hover {
@@ -117,6 +117,8 @@ $sublistLink-height: 1.25rem;
         }
 
         .navBar-sublistLink {
+          font-size: $text-tiny !important;
+
           &:hover {
             .navBar-linkText {
               color: $primary !important;
@@ -137,7 +139,7 @@ $sublistLink-height: 1.25rem;
           margin: 0;
           padding: 0;
           width: 6rem;
-          background-color: $light;
+          background-color: $background;
           text-align: center;
 
           .navBar-sublistLinkContainer {
@@ -147,10 +149,6 @@ $sublistLink-height: 1.25rem;
             height: $sublistLink-height;
             list-style: none;
 
-            &:not(:first-child) {
-              border-top: 1.5px solid $secondary;
-            }
-
             .navBar-sublistLink {
               display: flex;
               align-items: center;
@@ -158,7 +156,7 @@ $sublistLink-height: 1.25rem;
               text-decoration: none;
               font-family: $link-font;
               font-size: $text-link;
-              color: $secondary;
+              color: $background-text;
               width: 100%;
               height: 100%;
             }
@@ -230,7 +228,7 @@ $sublistLink-height: 1.25rem;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        border-top: 1.5px solid $secondary;
+        border-top: 1.5px solid $background-text;
 
         .navBar-link {
           width: 100%;
@@ -253,7 +251,6 @@ $sublistLink-height: 1.25rem;
               display: flex;
               align-items: center;
               justify-content: center;
-              border-top: 1.5px solid $secondary;
             }
           }
         }
@@ -404,6 +401,12 @@ $sublistLink-height: 1.25rem;
 
   @include responsive(stickyNav-linkCutoff-dropdown) {
     flex-wrap: wrap;
+
+    #navBar-logoHomeLinkSticky {
+      display: flex;
+      width: 100%;
+    }
+
     #navBar-stickyNavMobileMenu {
       display: flex;
     }
@@ -419,7 +422,7 @@ $sublistLink-height: 1.25rem;
         flex-wrap: wrap;
         width: 100%;
         font-size: $text-link;
-        background-color: $light;
+        background-color: $background;
 
         &.navBar-mobileLinksShown {
           height: auto;
@@ -434,7 +437,7 @@ $sublistLink-height: 1.25rem;
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          border-top: 1.5px solid $secondary;
+          border-top: 1.5px solid $background-text;
 
           .navBar-link {
             width: 100%;
@@ -456,7 +459,6 @@ $sublistLink-height: 1.25rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-top: 1.5px solid $secondary;
               }
             }
           }
@@ -492,7 +494,7 @@ $sublistLink-height: 1.25rem;
           font-size: $text-linkSmall;
           display: flex;
           align-items: center;
-          min-height: $link-height;
+          min-height: $stickyNav-height;
 
           .navBar-linkText {
             min-height: $link-height;

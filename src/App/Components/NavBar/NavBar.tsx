@@ -57,12 +57,13 @@ class NavBar extends Component {
   componentDidMount() {
     if (window) {
       window.addEventListener("scroll", e => this.checkScrollPosition());
-      window.addEventListener("resize", () => this.checkMobileMenu());
-      this.checkMobileMenu();
+      window.addEventListener("resize", () => this.handleResize());
+      this.handleResize();
     }
   }
 
-  checkMobileMenu() {
+  handleResize() {
+    this.setState({ showTopMobileLinks: false, showStickyMobileLinks: false });
     if (window) {
       // check if the top bar has mobile menu
       const topMenu = document.getElementById("navBar-topNavMobileMenu");
@@ -160,29 +161,29 @@ class NavBar extends Component {
               alt="Harold Myers Logo"
             />
             <span id="navBar-companyNameSticky">Harold Myers Inc.</span>
+            <div
+              id="navBar-stickyNavMobileMenu"
+              className="navBar-mobileNavMenu"
+              onClick={() =>
+                this.setState({
+                  showStickyMobileLinks: !this.state.showStickyMobileLinks
+                })
+              }
+            >
+              <Icon className="navBar-mobileLinksMenu">menu</Icon>
+            </div>
           </NavLink>
           <SlideDown
             className="navBar-linkSlidedown"
             closed={
-              this.state.displayingTopMobileMenu === undefined ||
-              (this.state.displayingTopMobileMenu &&
+              this.state.displayingStickyMobileMenu === undefined ||
+              (this.state.displayingStickyMobileMenu &&
                 !this.state.showStickyMobileLinks)
             }
             transitionOnAppear={false}
           >
             {this.navLinks(this.state.showStickyMobileLinks, false)}
           </SlideDown>
-          <div
-            id="navBar-stickyNavMobileMenu"
-            className="navBar-mobileNavMenu"
-            onClick={() =>
-              this.setState({
-                showStickyMobileLinks: !this.state.showStickyMobileLinks
-              })
-            }
-          >
-            <Icon className="navBar-mobileLinksMenu">menu</Icon>
-          </div>
         </div>
       </div>
     );
