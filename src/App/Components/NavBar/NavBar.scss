@@ -170,10 +170,11 @@ $sublistLink-height: 1.25rem;
 #navBar-navigation {
   #navBar-logoHomeLink {
     text-decoration: none;
-    height: $topNav-height;
+    min-height: $topNav-height;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 0.5rem;
 
     #navBar-companyLogo {
       width: 2.5rem;
@@ -184,11 +185,27 @@ $sublistLink-height: 1.25rem;
       font-family: $heading-font;
       font-size: $text-page-header;
       color: $company-name;
+
+      #navBar-trustedSince {
+        font-family: $text-font;
+        font-size: $text-standard;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+
+    @include responsive(tablet) {
     }
 
     @include responsive(tabletSmall) {
+      padding-bottom: 0;
+
       #navBar-companyName {
         font-size: 1rem;
+
+        #navBar-trustedSince {
+          font-size: $text-small;
+        }
       }
     }
 
@@ -200,6 +217,10 @@ $sublistLink-height: 1.25rem;
       }
       #navBar-companyName {
         font-size: 0.85rem;
+
+        #navBar-trustedSince {
+          font-size: $text-tiny;
+        }
       }
 
       #navBar-companyLogo {
@@ -251,6 +272,10 @@ $sublistLink-height: 1.25rem;
               display: flex;
               align-items: center;
               justify-content: center;
+
+              .navBar-sublistLink-active {
+                color: $primary !important;
+              }
             }
           }
         }
@@ -291,9 +316,7 @@ $sublistLink-height: 1.25rem;
 
           .navBar-sublistLinkContainer {
             .navBar-sublistLink-active {
-              .navBar-linkText {
-                color: $primary;
-              }
+              color: $primary !important;
             }
             .navBar-linkText {
               font-size: $text-linkSmall;
@@ -507,22 +530,28 @@ $sublistLink-height: 1.25rem;
           }
         }
 
-        .navBar-serviceLinks {
-          background-color: $secondary !important;
+        .navBar-servicesSlidedown {
+          .navBar-serviceLinksHide {
+            display: none;
+          }
 
-          .navBar-sublistLinkContainer {
-            .navBar-sublistLink-active {
-              .navBar-linkText {
-                color: $primary;
+          .navBar-serviceLinks {
+            background-color: $secondary !important;
+
+            .navBar-sublistLinkContainer {
+              .navBar-sublistLink-active {
+                .navBar-linkText {
+                  color: $primary;
+                }
               }
-            }
-            .navBar-linkText {
-              font-size: $text-linkSmall;
-              color: $secondary-contrast;
-            }
+              .navBar-linkText {
+                font-size: $text-linkSmall;
+                color: $secondary-contrast;
+              }
 
-            &:not(:first-child) {
-              border-top: 1.5px solid $secondary-contrast !important;
+              &:not(:first-child) {
+                border-top: 1.5px solid $secondary-contrast !important;
+              }
             }
           }
         }

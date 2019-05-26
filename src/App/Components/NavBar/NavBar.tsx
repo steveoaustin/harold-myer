@@ -118,7 +118,10 @@ class NavBar extends Component {
           <div id="navBar-navigation">
             <NavLink exact={true} to="/" id="navBar-logoHomeLink">
               <img id="navBar-companyLogo" src={logo} alt="Harold Myers Logo" />
-              <span id="navBar-companyName">Harold Myers Inc.</span>
+              <span id="navBar-companyName">
+                Harold Myers Inc.
+                <div id="navBar-trustedSince">Trusted Since 1939</div>
+              </span>
               <div
                 id="navBar-topNavMobileMenu"
                 className="navBar-mobileNavMenu"
@@ -284,7 +287,30 @@ class NavBar extends Component {
             }
             transitionOnAppear={false}
           >
-            <ul className="navBar-serviceLinks">
+            <ul
+              id={`${
+                topLinks
+                  ? "navBar-serviceLinksTop"
+                  : "navBar-serviceLinksSticky"
+              }`}
+              className="navBar-serviceLinks"
+              onClick={() => {
+                const serviceLinks = document.querySelector(
+                  "#navBar-serviceLinksSticky"
+                ) as HTMLElement;
+                if (serviceLinks && !this.state.displayingStickyMobileMenu) {
+                  serviceLinks.classList.add("navBar-serviceLinksHide");
+                }
+              }}
+              onMouseLeave={() => {
+                const serviceLinks = document.querySelector(
+                  "#navBar-serviceLinksSticky"
+                ) as HTMLElement;
+                if (serviceLinks && !this.state.displayingStickyMobileMenu) {
+                  serviceLinks.classList.remove("navBar-serviceLinksHide");
+                }
+              }}
+            >
               <li className="navBar-sublistLinkContainer">
                 <NavLink
                   exact={true}
