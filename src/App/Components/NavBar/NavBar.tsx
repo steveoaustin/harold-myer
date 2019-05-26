@@ -333,6 +333,17 @@ class NavBar extends Component {
               <li className="navBar-sublistLinkContainer">
                 <NavLink
                   exact={true}
+                  to="/services/installation"
+                  className="navBar-sublistLink"
+                  activeClassName="navBar-sublistLink-active"
+                  isActive={this.isActive.bind(this, "/services/installation")}
+                >
+                  <span className="navBar-linkText">INSTALLATION</span>
+                </NavLink>
+              </li>
+              <li className="navBar-sublistLinkContainer">
+                <NavLink
+                  exact={true}
                   to="/services/airConditioning"
                   className="navBar-sublistLink"
                   activeClassName="navBar-sublistLink-active"
@@ -342,17 +353,6 @@ class NavBar extends Component {
                   )}
                 >
                   <span className="navBar-linkText">AIR CONDITIONING</span>
-                </NavLink>
-              </li>
-              <li className="navBar-sublistLinkContainer">
-                <NavLink
-                  exact={true}
-                  to="/services/installation"
-                  className="navBar-sublistLink"
-                  activeClassName="navBar-sublistLink-active"
-                  isActive={this.isActive.bind(this, "/services/installation")}
-                >
-                  <span className="navBar-linkText">INSTALLATION</span>
                 </NavLink>
               </li>
             </ul>
