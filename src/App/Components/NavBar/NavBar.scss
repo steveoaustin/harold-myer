@@ -1,0 +1,558 @@
+@import "../../../Styles/master";
+
+$topNav-height: 3rem;
+$stickyNav-height: 2rem;
+$link-height: 1.5rem;
+$mobileLink-height: 1.25rem;
+$sublistLink-height: 1.25rem;
+
+.navBar-linkSlidedown,
+.navBar-servicesSlidedown {
+  transition-duration: 0.3s;
+}
+
+#navBar-infoBar {
+  min-height: 1.5rem;
+  background-color: $secondary;
+  color: $secondary-contrast;
+  display: flex;
+  align-items: center;
+  font-family: $text-font;
+  font-size: $text-small;
+
+  #navBar-facebookLink,
+  #navBar-facebookLogo {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  #navBar-facebookLink,
+  #navBar-phoneNumber {
+    padding: 0.25rem;
+  }
+
+  #navBar-facebookLink {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  #navBar-phoneNumber {
+    margin-right: 0.5rem;
+  }
+
+  #navBar-address {
+    padding: 0.25rem;
+    text-align: center;
+  }
+
+  @include responsive(mobileSmall) {
+    font-size: $text-tiny !important;
+  }
+
+  @include responsive(tablet) {
+    font-size: $text-small;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include responsive(desktopThin) {
+    #navBar-address {
+      margin-left: auto;
+    }
+  }
+}
+
+#navBar-navigation,
+#navBar-stickyNavigation {
+  background-color: $light;
+
+  .navBar-mobileNavMenu {
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 0.25rem;
+    color: $secondary;
+  }
+
+  .navBar-linkSlidedown {
+    overflow: hidden;
+    .navBar-links {
+      margin: 0;
+      padding: 0;
+
+      .navBar-linkContainer {
+        list-style: none;
+        min-height: $link-height;
+
+        .navBar-link {
+          display: inline-flex;
+          text-decoration: none;
+          font-family: $link-font;
+          color: $secondary;
+          height: 1.25rem;
+
+          &:hover {
+            color: $primary;
+          }
+
+          .navBar-linkText {
+            display: inline-flex;
+            align-items: center;
+            height: 75%;
+          }
+
+          &.navBar-link-active {
+            color: $primary;
+          }
+
+          .navbar-sublistLink-active {
+            .navBar-linkText {
+              color: $primary !important;
+            }
+          }
+        }
+
+        .navBar-sublistLink {
+          &:hover {
+            .navBar-linkText {
+              color: $primary !important;
+            }
+          }
+        }
+
+        .navBar-expandServicesIconContainer {
+          display: flex;
+          align-items: center;
+          margin-right: -1rem;
+          .navBar-expandServicesIcon {
+            font-size: 1rem;
+          }
+        }
+
+        .navBar-serviceLinks {
+          margin: 0;
+          padding: 0;
+          width: 6rem;
+          background-color: $light;
+          text-align: center;
+
+          .navBar-sublistLinkContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $sublistLink-height;
+            list-style: none;
+
+            &:not(:first-child) {
+              border-top: 1.5px solid $secondary;
+            }
+
+            .navBar-sublistLink {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              font-family: $link-font;
+              font-size: $text-link;
+              color: $secondary;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#navBar-navigation {
+  #navBar-logoHomeLink {
+    text-decoration: none;
+    height: $topNav-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #navBar-companyLogo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    #navBar-companyName {
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      color: $company-name;
+    }
+
+    @include responsive(tabletSmall) {
+      #navBar-companyName {
+        font-size: 1rem;
+      }
+    }
+
+    @include responsive(mobile) {
+      justify-content: flex-start;
+
+      .navBar-mobileLinksMenu {
+        font-size: 1.25rem;
+      }
+      #navBar-companyName {
+        font-size: 0.85rem;
+      }
+
+      #navBar-companyLogo {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  @include responsive(tablet) {
+    #navBar-topNavMobileMenu {
+      display: flex;
+    }
+
+    .navBar-links {
+      flex-wrap: wrap;
+
+      &.navBar-mobileLinksShown {
+        height: auto;
+      }
+
+      .navBar-linkContainer {
+        width: 100%;
+        min-height: $mobileLink-height !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border-top: 1.5px solid $secondary;
+
+        .navBar-link {
+          width: 100%;
+          height: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .navBar-servicesSlidedown {
+          width: 100%;
+          overflow: hidden;
+
+          .navBar-serviceLinks {
+            display: block;
+            width: 100%;
+
+            .navBar-sublistLinkContainer {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-top: 1.5px solid $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navBar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .navBar-link {
+      font-size: $text-link;
+    }
+
+    @include responsive(desktopThin) {
+      align-items: center;
+
+      .navBar-linkContainer {
+        &:not(:first-child) {
+          padding-left: 0.5rem;
+        }
+
+        .navBar-link-active {
+          .navBar-linkText {
+            border-bottom: 2px solid $primary;
+          }
+        }
+
+        .navBar-expandServicesIconContainer {
+          display: none !important;
+        }
+
+        .navBar-serviceLinks {
+          background-color: $secondary !important;
+
+          .navBar-sublistLinkContainer {
+            .navBar-sublistLink-active {
+              .navBar-linkText {
+                color: $primary;
+              }
+            }
+            .navBar-linkText {
+              font-size: $text-linkSmall;
+              color: $secondary-contrast;
+            }
+
+            &:not(:first-child) {
+              border-top: 1.5px solid $secondary-contrast !important;
+            }
+          }
+        }
+
+        &:not(:hover) {
+          .navBar-serviceLinks {
+            display: none;
+          }
+        }
+
+        &:hover {
+          .navBar-serviceLinks {
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    @include responsive(desktop) {
+      .navBar-linkContainer {
+        &:not(:first-child) {
+          padding-left: 1.25rem;
+        }
+      }
+    }
+
+    @include responsive(widescreen) {
+      .navBar-linkContainer {
+        &:not(:first-child) {
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+}
+
+#navBar-stickyNavigation {
+  height: $stickyNav-height;
+  width: 100%;
+  position: fixed;
+  transition: top 0.3s linear;
+  top: -$stickyNav-height - 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include responsive(mobileSmall) {
+    justify-content: flex-start;
+
+    .navBar-mobileLinksMenu {
+      font-size: 1rem;
+      margin-left: auto;
+    }
+
+    #navBar-companyNameSticky {
+      font-size: $text-standard;
+    }
+  }
+
+  .navBar-expandServicesIconContainer {
+    display: none !important;
+  }
+
+  &.navBar-stickyNavigationShown {
+    top: 0;
+  }
+
+  #navBar-logoHomeLinkSticky {
+    text-decoration: none;
+    height: $stickyNav-height;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    #navBar-companyLogoSticky {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    #navBar-companyNameSticky {
+      font-family: $heading-font;
+      font-size: $text-large;
+      color: $company-name;
+    }
+
+    @include responsive(mobile) {
+      #navBar-companyNameSticky {
+        font-size: 0.85rem;
+      }
+
+      #navBar-companyLogoSticky {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  @include responsive(stickyNav-linkCutoff-dropdown) {
+    flex-wrap: wrap;
+    #navBar-stickyNavMobileMenu {
+      display: flex;
+    }
+
+    .navBar-expandServicesIconContainer {
+      display: flex !important;
+    }
+
+    .navBar-linkSlidedown {
+      width: 100%;
+
+      .navBar-links {
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: $text-link;
+        background-color: $light;
+
+        &.navBar-mobileLinksShown {
+          height: auto;
+        }
+
+        .navBar-linkContainer {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          min-height: $mobileLink-height !important;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          border-top: 1.5px solid $secondary;
+
+          .navBar-link {
+            width: 100%;
+            height: $mobileLink-height;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .navBar-servicesSlidedown {
+            width: 100%;
+            overflow: hidden;
+
+            .navBar-serviceLinks {
+              display: block;
+              width: 100%;
+
+              .navBar-sublistLinkContainer {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top: 1.5px solid $secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navBar-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+
+    .navBar-linkContainer {
+      display: block;
+
+      .navBar-link {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    @include responsive(stickyNav-linkCutoff-links) {
+      min-height: $stickyNav-height !important;
+
+      .navBar-linkContainer {
+        padding-left: 0.65rem;
+        z-index: 1 !important;
+        min-height: $stickyNav-height;
+
+        .navBar-link {
+          font-size: $text-linkSmall;
+          display: flex;
+          align-items: center;
+          min-height: $link-height;
+
+          .navBar-linkText {
+            min-height: $link-height;
+          }
+
+          &.navBar-link-active {
+            .navBar-linkText {
+              border-bottom: 2px solid $primary;
+            }
+          }
+        }
+
+        .navBar-serviceLinks {
+          background-color: $secondary !important;
+
+          .navBar-sublistLinkContainer {
+            .navBar-sublistLink-active {
+              .navBar-linkText {
+                color: $primary;
+              }
+            }
+            .navBar-linkText {
+              font-size: $text-linkSmall;
+              color: $secondary-contrast;
+            }
+
+            &:not(:first-child) {
+              border-top: 1.5px solid $secondary-contrast !important;
+            }
+          }
+        }
+
+        &:not(:hover) {
+          .navBar-serviceLinks {
+            display: none;
+          }
+        }
+
+        &:hover {
+          .navBar-serviceLinks {
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    @include responsive(desktop) {
+      .navBar-linkContainer {
+        padding-left: 0.5rem;
+      }
+    }
+
+    @include responsive(widescreen) {
+      .navBar-linkContainer {
+        padding-left: 1rem;
+
+        .navBar-link {
+          font-size: $text-link;
+        }
+      }
+    }
+  }
+}

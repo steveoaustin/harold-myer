@@ -1,0 +1,73 @@
+$media: screen;
+
+$mobileSmall: 375px;
+$mobile: 450px;
+$tabletSmall: 600px;
+$tablet: 700px;
+$desktop: 800px;
+$stickyNav-linkCutoff: 900px;
+$widescreen: 1100px;
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobileSmall {
+    @media #{$media} and (max-width: $mobileSmall) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media #{$media} and (max-width: $mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tabletSmall {
+    @media #{$media} and (max-width: $tabletSmall) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media #{$media} and (max-width: $tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktopThin {
+    @media #{$media} and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media #{$media} and (min-width: $desktop) {
+      @content;
+    }
+  } @else if $breakpoint == stickyNav-linkCutoff-dropdown {
+    @media #{$media} and (max-width: $stickyNav-linkCutoff) {
+      @content;
+    }
+  } @else if $breakpoint == stickyNav-linkCutoff-links {
+    @media #{$media} and (min-width: $stickyNav-linkCutoff) {
+      @content;
+    }
+  } @else if $breakpoint == widescreen {
+    @media #{$media} and (min-width: $widescreen) {
+      @content;
+    }
+  }
+}
+
+// Color Palette
+$light: #ffeee2;
+$primary: #e56232;
+$primary-contrast: black;
+$secondary: #36454f;
+$secondary-contrast: white;
+$company-name: #ed6028;
+
+// Text Sizing
+$text-page-header: 1.5rem;
+$text-section-header: 1.25rem;
+$text-large: 1rem;
+$text-link: 0.6rem;
+$text-linkSmall: 0.5rem;
+$text-standard: 0.7rem;
+$text-small: 0.65rem;
+$text-tiny: 0.5rem;
+
+// Typefaces
+$text-font: "Metrophobic";
+$link-font: "Roboto";
+$heading-font: "Roboto Condensed";
+$company-name-font: "Roboto Condensed";

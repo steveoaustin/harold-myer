@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "project": {
+    "name": "harold-myers-website"
+  },
+  "api": {
+    "projectId": "ts7lblsw",
+    "dataset": "cms-data"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
+}
