@@ -201,8 +201,16 @@ class NavBar extends Component {
         >
           <img id="navBar-facebookLogo" src={facebook} alt="facebook link" />
         </div>
-        <div id="navBar-phoneNumber">{this.state.phone}</div>
-        <div id="navBar-address">{this.state.address}</div>
+        <div id="navBar-phoneNumber">
+          <Icon className="navBar-infoIcon">phone</Icon>
+          <span id="navBar-phoneNumberText">{this.state.phone}</span>
+        </div>
+        <div id="navBar-address">
+          <NavLink exact={true} to="/contactUs" className="navBar-locationLink">
+            <Icon className="navBar-infoIcon">location_on</Icon>
+            <span id="navBar-addressText">{this.state.address}</span>
+          </NavLink>
+        </div>
       </div>
     );
   }

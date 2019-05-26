@@ -13,8 +13,8 @@ $sublistLink-height: 1.25rem;
 
 #navBar-infoBar {
   min-height: 1.5rem;
-  background-color: $background;
-  color: $background-text;
+  background-color: $background-secondary;
+  color: $background-secondary-text;
   display: flex;
   align-items: center;
   font-family: $text-font;
@@ -28,7 +28,7 @@ $sublistLink-height: 1.25rem;
 
   #navBar-facebookLink,
   #navBar-phoneNumber {
-    padding: 0.25rem;
+    padding: 0.1rem;
   }
 
   #navBar-facebookLink {
@@ -40,29 +40,54 @@ $sublistLink-height: 1.25rem;
     }
   }
 
+  #navBar-address,
+  #navBar-phoneNumber {
+    display: flex;
+    align-items: center;
+  }
+
   #navBar-phoneNumber {
     margin-right: 0.5rem;
   }
 
   #navBar-address {
-    padding: 0.25rem;
+    padding: 0.1rem;
     text-align: center;
+    margin-left: auto;
+
+    .navBar-locationLink {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $background-secondary-text;
+    }
   }
 
-  @include responsive(mobileSmall) {
-    font-size: $text-tiny !important;
+  .navBar-infoIcon {
+    color: $background-secondary-text;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  @include responsive(mobile) {
+    #navBar-address {
+      padding-top: 0 !important;
+    }
+  }
+
+  @include responsive(tabletSmall) {
+    #navBar-addressText {
+      display: none;
+    }
   }
 
   @include responsive(tablet) {
-    font-size: $text-small;
+    font-size: $text-tiny;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   @include responsive(desktopThin) {
-    #navBar-address {
-      margin-left: auto;
-    }
   }
 }
 
@@ -175,6 +200,7 @@ $sublistLink-height: 1.25rem;
     align-items: center;
     justify-content: center;
     padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
 
     #navBar-companyLogo {
       width: 2.5rem;
@@ -185,6 +211,7 @@ $sublistLink-height: 1.25rem;
       font-family: $heading-font;
       font-size: $text-page-header;
       color: $company-name;
+      text-align: center;
 
       #navBar-trustedSince {
         font-family: $text-font;
@@ -194,12 +221,7 @@ $sublistLink-height: 1.25rem;
       }
     }
 
-    @include responsive(tablet) {
-    }
-
     @include responsive(tabletSmall) {
-      padding-bottom: 0;
-
       #navBar-companyName {
         font-size: 1rem;
 
