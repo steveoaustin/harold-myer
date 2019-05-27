@@ -386,6 +386,7 @@ $sublistLink-height: 1.25rem;
 #navBar-stickyNavigation {
   height: $stickyNav-height;
   width: 100%;
+  z-index: 1;
   position: fixed;
   transition: top 0.3s linear;
   top: -$stickyNav-height - 0.1rem;

@@ -1,0 +1,84 @@
+@import "../../../Styles/master";
+
+$arrowSize: 1.5rem;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+#carousel-container {
+  position: relative;
+
+  @include responsive(tablet) {
+    height: 70vw;
+  }
+  @include responsive(desktopThin) {
+    height: 60vw;
+  }
+  @include responsive(widescreen) {
+    height: 25rem;
+  }
+
+  #carousel-image {
+    height: 100%;
+
+    &.carousel-imageFade {
+      animation-name: fade-out;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &:hover {
+    .carousel-arrow {
+      animation: fade-in;
+      animation-duration: 1s;
+    }
+  }
+
+  &:not(:hover) {
+    .carousel-arrow {
+      animation: fade-out;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .carousel-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: $arrowSize;
+    height: $arrowSize;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-$arrowSize / 2);
+  }
+
+  #carousel-arrowRight {
+    right: 1rem;
+  }
+
+  #carousel-arrowLeft {
+    left: 1rem;
+  }
+}
