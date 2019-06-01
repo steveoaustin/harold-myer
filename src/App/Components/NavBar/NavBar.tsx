@@ -3,7 +3,7 @@ import facebook from "../../../Media/graphics/facebook.png";
 import { NavLink } from "react-router-dom";
 import { SlideDown } from "react-slidedown";
 import { Icon } from "@material-ui/core";
-import logo from "../../../Media/Images/TestImages/flame.png";
+import logo from "../../../Media/graphics/logo.svg";
 
 import "./NavBar.scss";
 
@@ -93,7 +93,7 @@ class NavBar extends Component {
       const headerBar = document.getElementById("navBar-topBarContainer");
       if (!headerBar) return;
       const headerBarHeight = headerBar.clientHeight;
-      if (headerBarHeight - position < 0) {
+      if (position - headerBarHeight > 50) {
         this.setState({ showStickyNavBar: true });
       } else {
         this.setState({
@@ -167,11 +167,12 @@ class NavBar extends Component {
             <div
               id="navBar-stickyNavMobileMenu"
               className="navBar-mobileNavMenu"
-              onClick={() =>
+              onClick={e => {
+                this.stopClickPropagation(e);
                 this.setState({
                   showStickyMobileLinks: !this.state.showStickyMobileLinks
-                })
-              }
+                });
+              }}
             >
               <Icon className="navBar-mobileLinksMenu">menu</Icon>
             </div>

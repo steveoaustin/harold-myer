@@ -10,9 +10,20 @@
   align-items: center;
   justify-content: center;
 
-  #footer-logo {
+  #footer-logoBackground {
     width: 2.5rem;
     height: 2.5rem;
+    padding: 0.1rem;
+    margin: 0.25rem;
+    margin-top: 0.5rem;
+
+    border-radius: 50%;
+    //background-color: $background;
+
+    #footer-logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
 
@@ -49,6 +60,8 @@
 
 #footer-info {
   padding: 0.25rem;
+  padding-top: 0.5rem;
+  height: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -56,12 +69,15 @@
   font-size: $text-tiny;
 
   @include responsive(tabletSmall) {
+    height: auto;
     justify-content: center;
+    padding-top: 0.25rem !important;
 
     #footer-facebookLink {
       display: flex;
       justify-content: center;
       flex-basis: 100%;
+      padding: 0.25rem;
     }
 
     #footer-copyright {
@@ -76,7 +92,6 @@
   }
 
   #footer-facebookLink {
-    padding: 0.25rem;
     padding-right: 0.5rem;
     #footer-facebookLogo {
       width: 1rem;

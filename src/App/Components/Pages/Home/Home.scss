@@ -1,5 +1,83 @@
 @import "../../../../Styles/master";
 
 #home {
-  height: 35rem;
+  background-color: $page-color;
+
+  #home-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #home-header {
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      color: $primary;
+      background-color: $background;
+      padding: 0.25rem;
+      border-radius: 1px;
+      text-align: center;
+
+      @include responsive(tabletSmall) {
+        font-size: $text-section-header;
+        padding: 0.15rem;
+      }
+    }
+  }
+
+  #home-serviceListContainer {
+    #home-serviceListHeading {
+      margin: auto;
+      font-family: $text-font;
+      font-size: $text-large;
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+      color: $primary-contrast;
+      width: 95%;
+    }
+
+    #home-serviceList {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 0.5rem;
+
+      .home-service {
+        display: flex;
+        align-items: center;
+        font-size: $text-standard;
+        font-family: $text-font;
+        box-sizing: border-box;
+        padding: 0.25rem;
+        flex-basis: 40%;
+        justify-content: center;
+
+        @include responsive(widescreen) {
+          flex-basis: 35%;
+        }
+
+        &#home-serviceLong {
+          flex-basis: 100% !important;
+        }
+
+        @include responsive(tablet) {
+          flex-basis: 100%;
+          padding: 0.125rem;
+          justify-content: center;
+
+          #home-serviceLongItem {
+            text-align: center;
+          }
+        }
+
+        .home-serviceIcon {
+          font-size: $text-standard;
+          line-height: $text-standard;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
 }

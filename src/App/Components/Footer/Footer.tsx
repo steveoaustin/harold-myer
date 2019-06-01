@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../../../Media/Images/TestImages/flame.png";
+import logo from "../../../Media/graphics/logo.svg";
 import { NavLink } from "react-router-dom";
 import facebook from "../../../Media/graphics/facebook.png";
 
@@ -35,7 +35,9 @@ class Footer extends Component {
       <div id="footer">
         <div id="footer-logoContainer">
           <NavLink exact={true} to="/">
-            <img src={logo} id="footer-logo" alt="Harold Myers logo" />
+            <div id="footer-logoBackground">
+              <img src={logo} id="footer-logo" alt="Harold Myers logo" />
+            </div>
           </NavLink>
         </div>
         <div id="footer-links">{this.footerLinks()}</div>

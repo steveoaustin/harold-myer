@@ -13,6 +13,10 @@ class ImageCarousel extends Component {
     nextIndex: number;
     inTransition: boolean;
     fading: boolean;
+    locked: boolean;
+    x0: number | null;
+    y0: number | null;
+    verticalOverride: boolean;
   };
   images: string[] = [tanker, coal, tankerGray, chevy];
   imageStyle = {
@@ -25,7 +29,7 @@ class ImageCarousel extends Component {
   backgroundTimer: number;
   fadeTime: number = 1000;
   displayTime: number = 4000;
-  backgroundDelay: number = 100;
+  backgroundDelay: number = 50;
 
   constructor(props: any) {
     super(props);
@@ -33,7 +37,11 @@ class ImageCarousel extends Component {
       index: 0,
       nextIndex: 1,
       inTransition: false,
-      fading: false
+      fading: false,
+      locked: false,
+      x0: 0,
+      y0: 0,
+      verticalOverride: false
     };
 
     this.carouselTimer = window.setInterval(
@@ -42,6 +50,71 @@ class ImageCarousel extends Component {
     );
     this.fadeTimer = 0;
     this.backgroundTimer = 0;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.carouselTimer);
+    clearInterval(this.fadeTimer);
+    clearInterval(this.backgroundTimer);
+  }
+
+  componentDidMount() {
+    const control = document.querySelector("#carousel-image");
+    if (control) {
+      control.addEventListener("mousedown", this.lock.bind(this));
+      control.addEventListener("touchstart", this.lock.bind(this));
+      control.addEventListener("mouseup", this.move.bind(this));
+      control.addEventListener("touchend", this.move.bind(this));
+      control.addEventListener("touchmove", e => e.preventDefault());
+      control.addEventListener("mousemove", this.drag.bind(this));
+      control.addEventListener("touchmove", this.drag.bind(this));
+    }
+  }
+
+  unify(e: any) {
+    return e.changedTouches ? e.changedTouches[0] : e;
+  }
+
+  drag(e: any) {
+    e.preventDefault();
+
+    if (this.state.locked && this.state.x0 !== null) {
+      const dx = this.unify(e).clientX - this.state.x0;
+
+      if (this.state.y0 !== null && Math.abs(dx) < 40) {
+        const dy = this.unify(e).clientY - this.state.y0;
+
+        if (Math.abs(dy) > 40 || this.state.verticalOverride) {
+          this.setState({ y0: this.unify(e).clientY, verticalOverride: true });
+          if (window) {
+            window.scroll(0, Math.round(window.scrollY) - dy);
+          }
+        }
+      }
+    }
+  }
+
+  lock(e: any) {
+    this.setState({ x0: this.unify(e).clientX, y0: this.unify(e).clientY });
+    this.setState({ locked: true });
+  }
+
+  move(e: any) {
+    this.setState({ verticalOverride: false });
+    if (this.state.locked && this.state.x0 !== null) {
+      const dx = this.unify(e).clientX - this.state.x0;
+      const sign = Math.sign(dx);
+      const dragPercentage = +((sign * dx) / window.innerWidth).toFixed(2);
+
+      if (+dragPercentage > 0.1) {
+        if (sign < 0) {
+          this.previousSlide();
+        } else {
+          this.nextSlide();
+        }
+      }
+      this.setState({ x0: null, y0: null, locked: false });
+    }
   }
 
   nextSlide() {

@@ -60,13 +60,14 @@ $sublistLink-height: 1.25rem;
       align-items: center;
       text-decoration: none;
       color: $background-secondary-text;
+      cursor: pointer;
     }
   }
 
   .navBar-infoIcon {
     color: $background-secondary-text;
     font-size: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
 
   @include responsive(mobile) {
@@ -205,6 +206,7 @@ $sublistLink-height: 1.25rem;
     #navBar-companyLogo {
       width: 2.5rem;
       height: 2.5rem;
+      padding: 0.25rem;
     }
 
     #navBar-companyName {
@@ -338,7 +340,9 @@ $sublistLink-height: 1.25rem;
 
           .navBar-sublistLinkContainer {
             .navBar-sublistLink-active {
-              color: $primary !important;
+              .navBar-linkText {
+                color: $primary;
+              }
             }
             .navBar-linkText {
               font-size: $text-linkSmall;
@@ -425,6 +429,7 @@ $sublistLink-height: 1.25rem;
     #navBar-companyLogoSticky {
       width: 1.75rem;
       height: 1.75rem;
+      padding: 0.125rem;
     }
 
     #navBar-companyNameSticky {
@@ -436,11 +441,6 @@ $sublistLink-height: 1.25rem;
     @include responsive(mobile) {
       #navBar-companyNameSticky {
         font-size: 0.85rem;
-      }
-
-      #navBar-companyLogoSticky {
-        width: 2rem;
-        height: 2rem;
       }
     }
   }

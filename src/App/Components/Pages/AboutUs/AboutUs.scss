@@ -1,0 +1,51 @@
+@import "../../../../Styles/master";
+
+#about-textContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  #about-title {
+    font-family: $heading-font;
+    font-size: $text-page-header;
+    color: $primary;
+    text-align: center;
+    flex-basis: 100%;
+    padding-top: 1rem;
+
+    @include responsive(tabletSmall) {
+      font-size: $text-section-header;
+      padding-left: 0.15rem;
+      padding-right: 0.15rem;
+    }
+  }
+
+  #about-text {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-family: $text-font;
+    font-size: $text-standard;
+    text-align: center;
+
+    @include responsive(desktop) {
+      width: 60%;
+    }
+
+    @include responsive(desktopThin) {
+      width: 70%;
+    }
+
+    @include responsive(tablet) {
+      width: 80%;
+    }
+
+    @include responsive(tabletSmall) {
+      width: 90%;
+    }
+
+    @include responsive(mobile) {
+      width: 95% !important;
+    }
+  }
+}

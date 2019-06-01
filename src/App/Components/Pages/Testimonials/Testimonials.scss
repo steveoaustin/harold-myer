@@ -1,0 +1,67 @@
+@import "../../../../Styles//master";
+
+#testimonials {
+  #testimonials-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 40vw;
+
+    #testimonials-header {
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      color: $primary;
+      background-color: #313647;
+      padding: 0.25rem;
+      border-radius: 1px;
+
+      @include responsive(tabletSmall) {
+        font-size: $text-section-header;
+        padding: 0.15rem;
+      }
+    }
+  }
+
+  #testimonials-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: $text-font;
+
+    #testimonials-title {
+      text-align: center;
+      font-size: $text-large;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .testimonials-testimonial {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      width: 60%;
+      margin: auto;
+      font-size: $text-standard;
+
+      @include responsive(tabletSmall) {
+        width: 80%;
+      }
+
+      @include responsive(mobile) {
+        width: 95%;
+      }
+
+      .testimonials-quote {
+        text-align: center;
+        font-style: italic;
+      }
+
+      .testimonials-info {
+        padding-top: 0.5rem;
+        text-align: right;
+      }
+    }
+  }
+}

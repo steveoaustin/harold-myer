@@ -1,0 +1,107 @@
+@import "../../../../Styles/master";
+
+#payment {
+  #payment-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #payment-header {
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      color: $primary;
+      background-color: $background;
+      padding: 0.25rem;
+      border-radius: 1px;
+
+      @include responsive(tabletSmall) {
+        font-size: $text-section-header;
+        padding: 0.15rem;
+      }
+    }
+  }
+
+  #payment-text {
+    margin: auto;
+    font-family: $text-font;
+    font-size: $text-standard;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: $primary-contrast;
+
+    @include responsive(desktop) {
+      width: 60%;
+    }
+
+    @include responsive(desktopThin) {
+      width: 70%;
+    }
+
+    @include responsive(tablet) {
+      width: 80%;
+    }
+
+    @include responsive(tabletSmall) {
+      width: 90%;
+    }
+
+    @include responsive(mobile) {
+      width: 95% !important;
+    }
+  }
+
+  #payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: $background;
+
+    .payment-option {
+      box-sizing: border-box;
+      flex-basis: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      color: $background-text;
+      font-family: $text-font;
+      font-size: $text-large;
+      text-align: center;
+      padding-bottom: 1rem;
+
+      @include responsive(widescreen) {
+        flex-basis: 33%;
+        padding-right: 0.5rem;
+
+        &:first-child {
+          padding-left: 0.5rem;
+        }
+      }
+
+      .payment-image {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        padding-bottom: 1rem;
+      }
+
+      .payment-optionTitle {
+        flex-basis: 100%;
+        padding-bottom: 0.5rem;
+      }
+
+      .payment-optionDescription {
+        box-sizing: border-box;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        flex-basis: 100%;
+        font-size: $text-small;
+      }
+    }
+  }
+}

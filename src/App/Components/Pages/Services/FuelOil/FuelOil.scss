@@ -1,0 +1,96 @@
+@import "../../../../../Styles/master";
+
+#fuelOil {
+  background-color: $page-color;
+
+  #fuelOil-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #fuelOil-header {
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      color: $primary;
+      background-color: $background;
+      padding: 0.25rem;
+      border-radius: 1px;
+
+      @include responsive(tabletSmall) {
+        font-size: $text-section-header;
+        padding: 0.15rem;
+      }
+    }
+  }
+
+  #fuelOil-about {
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-family: $text-font;
+    font-size: $text-standard;
+    text-align: center;
+
+    @include responsive(desktop) {
+      width: 60%;
+    }
+
+    @include responsive(desktopThin) {
+      width: 70%;
+    }
+
+    @include responsive(tablet) {
+      width: 80%;
+    }
+
+    @include responsive(tabletSmall) {
+      width: 90%;
+    }
+
+    @include responsive(mobile) {
+      width: 95% !important;
+    }
+  }
+
+  #fuelOil-mapOverview {
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    font-size: $text-standard;
+    font-family: $text-font;
+    text-align: center;
+
+    @include responsive(desktopThin) {
+      width: 70%;
+    }
+
+    @include responsive(tablet) {
+      width: 80%;
+    }
+
+    @include responsive(tabletSmall) {
+      width: 90%;
+    }
+
+    @include responsive(mobile) {
+      width: 95% !important;
+    }
+  }
+
+  #fuelOil-mapContainer {
+    overflow: hidden;
+    height: 50vh;
+
+    #fuelOil-map {
+      width: 100%;
+      height: 60vh;
+      border: none;
+      padding: 0;
+      margin-top: 0.5rem;
+      top: -65px !important;
+      position: relative;
+    }
+  }
+}
