@@ -3,24 +3,90 @@
 #home {
   background-color: $page-color;
 
-  #home-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  #home-header,
+  #home-headerMobile {
+    font-family: $heading-font;
+    font-size: $text-section-header;
+    color: $primary;
+    background-color: $background;
+    padding: 0.25rem;
+    border-radius: 1px;
+    text-align: center;
 
+    @include responsive(tablet) {
+      font-size: $text-section-header;
+      padding: 0.15rem;
+    }
+  }
+
+  #home-headerMobile {
+    display: none;
+    border-radius: 0;
+    border-top: 2px solid $primary;
+  }
+
+  @include responsive(tablet) {
     #home-header {
-      font-family: $heading-font;
-      font-size: $text-page-header;
-      color: $primary;
-      background-color: $background;
-      padding: 0.25rem;
-      border-radius: 1px;
-      text-align: center;
+      display: none;
+    }
 
-      @include responsive(tabletSmall) {
-        font-size: $text-section-header;
-        padding: 0.15rem;
+    #home-headerMobile {
+      display: block;
+    }
+  }
+
+  #home-image {
+    @include parallax;
+
+    @include responsive(tablet) {
+      height: 85vw;
+      background-image: url("../../../../Media/Images/photoshoot/home2mobile.jpg") !important;
+      background-attachment: scroll;
+    }
+  }
+
+  #home-fuelContainer {
+    background-color: $background;
+    color: $primary;
+    text-align: center;
+    font-family: $text-font;
+
+    #home-fuelTitle {
+      font-family: $heading-font;
+      font-size: $text-large;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    #home-fuelList {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .home-fuel {
+        padding-bottom: 0.75rem;
+        font-size: $text-standard;
+        box-sizing: border-box;
+        flex-basis: 25%;
+
+        @include responsive(tablet) {
+          flex-basis: 50%;
+        }
+
+        @include responsive(mobile) {
+          flex-basis: 100%;
+        }
+
+        .home-fuelName {
+          font-size: $text-large;
+        }
       }
+    }
+
+    #home-fuelDate {
+      padding: 0.5rem;
+      font-style: italic;
+      font-size: $text-standard;
     }
   }
 

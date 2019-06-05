@@ -2,9 +2,19 @@
 
 #payment {
   #payment-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: $header-image-height-desktop;
+
+    @include responsive(tablet) {
+      height: $header-image-height-mobile;
+    }
+
     #payment-header {
       font-family: $heading-font;
       font-size: $text-page-header;
@@ -55,7 +65,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: $background;
 
@@ -70,21 +80,21 @@
       font-family: $text-font;
       font-size: $text-large;
       text-align: center;
-      padding-bottom: 1rem;
+      &:last-child {
+        padding-bottom: 1rem;
+      }
 
       @include responsive(widescreen) {
         flex-basis: 33%;
         padding-right: 0.5rem;
+        padding-left: 0.5rem;
 
-        &:first-child {
-          padding-left: 0.5rem;
+        .separator {
+          display: none;
         }
       }
 
-      .payment-image {
-        flex-basis: 100%;
-        display: flex;
-        justify-content: center;
+      .payment-optionImage {
         width: 5rem;
         height: 5rem;
         padding-bottom: 1rem;
@@ -101,6 +111,24 @@
         padding-right: 0.25rem;
         flex-basis: 100%;
         font-size: $text-small;
+      }
+
+      #payment-prepayFormDownload {
+        border: 2px solid $primary;
+        border-radius: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        padding: 0.25rem;
+        font-family: $text-font;
+        font-size: $text-standard;
+        text-decoration: none;
+        color: $primary;
+      }
+
+      .separator {
+        flex-basis: 100%;
       }
     }
   }

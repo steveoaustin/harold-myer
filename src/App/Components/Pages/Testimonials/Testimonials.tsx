@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import feedback from "../../../../Media/Images/TestImages/feedback.jpg";
+import feedback from "../../../../Media/Images/Originals/testimonials.jpg";
 
 import "./Testimonials.scss";
+import Separator from "../../Separator/Separator";
 
 const sanityClient = require("@sanity/client");
 
@@ -38,14 +39,17 @@ class Testimonials extends Component {
         <div id="testimonials-content">
           <div id="testimonials-title">What our customers think:</div>
           {this.state.testimonials.map((testimonial: any, i: number) => (
-            <div key={i} className="testimonials-testimonial">
-              <div className="testimonials-quote">
-                "{testimonial.testimonialQuote}"
+            <>
+              <div key={i} className="testimonials-testimonial">
+                <div className="testimonials-quote">
+                  "{testimonial.testimonialQuote}"
+                </div>
+                <div className="testimonials-info">
+                  -{testimonial.name}, {testimonial.location}
+                </div>
               </div>
-              <div className="testimonials-info">
-                -{testimonial.name}, {testimonial.location}
-              </div>
-            </div>
+              {i !== this.state.testimonials.length - 1 && <Separator />}
+            </>
           ))}
         </div>
       </div>

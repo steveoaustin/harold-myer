@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import install from "../../../../../Media/Images/Originals/installation.jpg";
 
 import "./Installation.scss";
+import Separator from "../../../Separator/Separator";
 
 class Installation extends Component {
   render() {
     return (
       <div id="installation">
-        <div id="installation-image">
+        <div
+          id="installation-image"
+          style={{ backgroundImage: `url(${install})` }}
+        >
           <div id="installation-header">Installation</div>
         </div>
         <div id="installation-about">
@@ -15,6 +20,9 @@ class Installation extends Component {
           design and install your next high efficiency heating or air
           conditioning system.
         </div>
+
+        <Separator />
+
         <div id="installation-mapOverview">
           This is our general service area.
           {

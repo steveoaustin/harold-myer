@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import oil from "../../../../../Media/Images/Originals/oil.jpg";
 
 import "./FuelOil.scss";
+import Separator from "../../../Separator/Separator";
 
 class FuelOil extends Component {
   render() {
     return (
       <div id="fuelOil">
-        <div id="fuelOil-image">
+        <div id="fuelOil-image" style={{ backgroundImage: `url(${oil})` }}>
           <div id="fuelOil-header">Fuel Oil</div>
         </div>
         <div id="fuelOil-about">
@@ -16,6 +18,8 @@ class FuelOil extends Component {
           enables us to have fuel oil on hand and ready to be delivered even in
           the worst weather conditions.
         </div>
+
+        <Separator />
 
         <div id="fuelOil-mapOverview">
           This is our general service area.

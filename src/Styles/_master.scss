@@ -48,6 +48,21 @@ $widescreen: 1100px;
   }
 }
 
+@mixin parallax {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $header-image-height-desktop;
+
+  @include responsive(tablet) {
+    height: $header-image-height-mobile;
+  }
+}
+
 // Color Palette
 $background: #252525;
 $background-text: white;
@@ -81,5 +96,5 @@ $header-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
   1px 1px 0 #fff;
 
 // Element Sizing
-$header-image-height-desktop: 20rem;
-$header-image-height-mobile: 70vw;
+$header-image-height-desktop: 16rem;
+$header-image-height-mobile: 100vw;

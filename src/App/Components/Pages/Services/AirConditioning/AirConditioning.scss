@@ -4,9 +4,7 @@
   background-color: $page-color;
 
   #airConditioning-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include parallax;
 
     #airConditioning-header {
       font-family: $heading-font;
@@ -29,7 +27,6 @@
     font-size: $text-standard;
     text-align: center;
     padding-top: 1rem;
-    padding-bottom: 1rem;
 
     @include responsive(desktop) {
       width: 60%;
@@ -53,7 +50,6 @@
   }
 
   #airConditioning-mapOverview {
-    padding-top: 1rem;
     padding-bottom: 1rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;

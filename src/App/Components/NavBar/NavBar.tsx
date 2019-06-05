@@ -207,7 +207,19 @@ class NavBar extends Component {
           <span id="navBar-phoneNumberText">{this.state.phone}</span>
         </div>
         <div id="navBar-address">
-          <NavLink exact={true} to="/contactUs" className="navBar-locationLink">
+          <NavLink
+            exact={true}
+            to="/contactUs"
+            className="navBar-locationLink"
+            onClick={() => {
+              window.setTimeout(() => {
+                const map = document.getElementById("contact-map");
+                if (map) {
+                  window.scrollTo(0, map.offsetTop);
+                }
+              }, 50);
+            }}
+          >
             <Icon className="navBar-infoIcon">location_on</Icon>
             <span id="navBar-addressText">{this.state.address}</span>
           </NavLink>

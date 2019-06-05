@@ -4,9 +4,7 @@
   background-color: $page-color;
 
   #services-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include parallax;
 
     #services-header {
       font-family: $heading-font;
@@ -25,7 +23,7 @@
 
   #services-overview {
     margin: auto;
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
     font-family: $text-font;
     font-size: $text-standard;

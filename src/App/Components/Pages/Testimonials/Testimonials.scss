@@ -4,11 +4,16 @@
   #testimonials-image {
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    height: 40vw;
+    height: $header-image-height-desktop;
+
+    @include responsive(tablet) {
+      height: $header-image-height-mobile;
+    }
 
     #testimonials-header {
       font-family: $heading-font;
@@ -35,12 +40,10 @@
       font-size: $text-large;
       padding-left: 0.25rem;
       padding-right: 0.25rem;
-      padding-bottom: 0.5rem;
+      padding-bottom: 2rem;
     }
 
     .testimonials-testimonial {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
       width: 60%;
       margin: auto;
       font-size: $text-standard;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import services from "../../../../Media/Images/photoshoot/services.jpg";
 
 import "./Services.scss";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
@@ -7,7 +8,10 @@ class Services extends Component {
   render() {
     return (
       <div id="services">
-        <div id="services-image">
+        <div
+          id="services-image"
+          style={{ backgroundImage: `url(${services})` }}
+        >
           <div id="services-header">Our Services</div>
         </div>
         <div id="services-overview">
@@ -16,8 +20,14 @@ class Services extends Component {
           highly skilled technicians provide all of our service work. Our trucks
           and warehouse are stocked with a complete line of parts to fix all
           makes and models of oil fired heating equipment. Harold Myers, Inc.
-          does heater and air conditioner installations too. We are here to meet
-          all of your home comfort needs!
+          does heater and air conditioner installations too.
+          {
+            <>
+              <br />
+              <br />
+            </>
+          }
+          We are here to meet all of your home comfort needs!
         </div>
         <ServicesPanel />
         <div id="services-mapOverview">

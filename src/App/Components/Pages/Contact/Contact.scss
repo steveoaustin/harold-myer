@@ -4,29 +4,17 @@
   background-color: $page-color;
 
   #contact-image {
-    background-position: top;
+    background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: $header-image-height-desktop;
 
-    @include responsive(desktopThin) {
-      background-size: cover;
-    }
-
     @include responsive(tablet) {
-      background-size: auto 70%;
       height: $header-image-height-mobile;
-    }
-
-    @include responsive(tabletSmall) {
-      background-size: auto 65%;
-    }
-
-    @include responsive(mobile) {
-      background-size: auto 50% !important;
     }
 
     #contact-header {

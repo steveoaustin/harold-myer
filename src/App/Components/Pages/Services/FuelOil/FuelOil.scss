@@ -4,9 +4,18 @@
   background-color: $page-color;
 
   #fuelOil-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: $header-image-height-desktop;
+
+    @include responsive(tablet) {
+      height: 100vw;
+    }
 
     #fuelOil-header {
       font-family: $heading-font;
@@ -26,7 +35,6 @@
   #fuelOil-about {
     margin: auto;
     padding-top: 1rem;
-    padding-bottom: 2rem;
     font-family: $text-font;
     font-size: $text-standard;
     text-align: center;
@@ -54,7 +62,6 @@
 
   #fuelOil-mapOverview {
     margin: auto;
-    padding-top: 1rem;
     padding-bottom: 1rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;

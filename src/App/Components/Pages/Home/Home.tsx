@@ -1,18 +1,91 @@
 import React, { Component } from "react";
-
-import "./Home.scss";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
 import { Icon } from "@material-ui/core";
+import home from "../../../../Media/Images/photoshoot/home2.jpg";
+
+import "./Home.scss";
+
+const sanityClient = require("@sanity/client");
 
 class Home extends Component {
+  state: {
+    fuelList: {
+      fuelType: string;
+      fuelPrice: string | null;
+      fuelInfo: string | null;
+    }[];
+    asOfDate: string;
+  };
+  client: any;
+
+  constructor(props: any) {
+    super(props);
+    this.state = { fuelList: [], asOfDate: "" };
+    this.client = sanityClient({
+      projectId: "ts7lblsw",
+      dataset: "cms-data",
+      useCdn: true
+    });
+    this.client
+      .fetch(
+        `*[_type == "fuelList"]{currentOptions[]{fuelName, fuelPrice, fuelInfo}, asOfDate}[0]`
+      )
+      .then((result: any) => {
+        console.log(result);
+        const list: {
+          fuelType: string;
+          fuelPrice: string | null;
+          fuelInfo: string | null;
+        }[] = [];
+        result.currentOptions.map((fuel: any) => {
+          list.push({
+            fuelType: fuel.fuelName,
+            fuelPrice: fuel.fuelPrice,
+            fuelInfo: fuel.fuelInfo
+          });
+          return null;
+        });
+        this.setState({ fuelList: list, asOfDate: result.asOfDate });
+      });
+  }
+
   render() {
     return (
       <div id="home">
-        <div id="home-image">
+        <div id="home-headerMobile">
+          Delivering high quality fuel at affordable prices
+        </div>
+        <div id="home-image" style={{ backgroundImage: `url(${home})` }}>
           <div id="home-header">
             Delivering high quality fuel at affordable prices
           </div>
         </div>
+
+        <div id="home-fuelContainer">
+          <div id="home-fuelTitle">We offer the following fuels:</div>
+
+          <div id="home-fuelList">
+            {this.state.fuelList.map(
+              (fuel: any) =>
+                (fuel.fuelPrice || fuel.fuelInfo) && (
+                  <div className="home-fuel">
+                    <div className="home-fuelName">{fuel.fuelType}</div>
+                    {fuel.fuelPrice && (
+                      <div className="home-fuelPrice">{fuel.fuelPrice}</div>
+                    )}
+                    {fuel.fuelInfo && (
+                      <div className="home-fuelInfo">{fuel.fuelInfo} </div>
+                    )}
+                  </div>
+                )
+            )}
+          </div>
+
+          <div id="home-fuelDate">
+            Prices are up to date as of {this.state.asOfDate}
+          </div>
+        </div>
+
         <div id="home-serviceListContainer">
           <div id="home-serviceListHeading">
             We proudly offer the following services:

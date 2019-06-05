@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Icon } from "@material-ui/core";
-import chevy from "../../../Media/Images/Compressed/chevyColor.jpg";
 import coal from "../../../Media/Images/Compressed/coalTrailer.jpg";
 import tanker from "../../../Media/Images/Compressed/tanker.jpg";
 import tankerGray from "../../../Media/Images/Compressed/tankerGray.jpg";
+import oldTruck from "../../../Media/Images/photoshoot/oldTruck.jpg";
+import andy from "../../../Media/Images/photoshoot/andy.jpg";
 
 import "./ImageCarousel.scss";
 
@@ -18,7 +19,7 @@ class ImageCarousel extends Component {
     y0: number | null;
     verticalOverride: boolean;
   };
-  images: string[] = [tanker, coal, tankerGray, chevy];
+  images: string[] = [oldTruck, tanker, coal, tankerGray, andy];
   imageStyle = {
     backgroundSize: "cover",
     backgroundPosition: "center"

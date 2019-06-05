@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import air from "../../../../../Media/Images/Originals/airConditioning.jpg";
 
 import "./AirConditioning.scss";
+import Separator from "../../../Separator/Separator";
 
 class AirConditioning extends Component {
   render() {
     return (
       <div id="airConditioning">
-        <div id="airConditioning-image">
+        <div
+          id="airConditioning-image"
+          style={{ backgroundImage: `url(${air})` }}
+        >
           <div id="airConditioning-header">Air Conditioning</div>
         </div>
         <div id="airConditioning-about">
@@ -15,6 +20,8 @@ class AirConditioning extends Component {
           all of the training and experience needed to install a quality, high
           efficiency air conditioning system.
         </div>
+
+        <Separator />
 
         <div id="airConditioning-mapOverview">
           This is our general service area.

@@ -2,14 +2,38 @@ import React, { Component } from "react";
 import prepay from "../../../../Media/graphics/prepay.svg";
 import budgetPlan from "../../../../Media/graphics/budgetPlan.svg";
 import capPrice from "../../../../Media/graphics/capPrice.svg";
+import payment from "../../../../Media/Images/Originals/payment.jpg";
 
 import "./Payment.scss";
+import Separator from "../../Separator/Separator";
+
+const sanityClient = require("@sanity/client");
 
 class Payment extends Component {
+  state: {
+    prepayFile: any;
+  };
+  client: any;
+
+  constructor(props: any) {
+    super(props);
+    this.state = { prepayFile: undefined };
+    this.client = sanityClient({
+      projectId: "ts7lblsw",
+      dataset: "cms-data",
+      useCdn: true
+    });
+    this.client
+      .fetch(`*[_type == "prepayForm"]{"fileUrl" : form.asset->url}[0]`)
+      .then((result: any) => {
+        this.setState({ prepayFile: result.fileUrl });
+      });
+  }
+
   render() {
     return (
       <div id="payment">
-        <div id="payment-image">
+        <div id="payment-image" style={{ backgroundImage: `url(${payment})` }}>
           <div id="payment-header">Payment</div>
         </div>
         <div id="payment-text">
@@ -46,7 +70,9 @@ class Payment extends Component {
               throughout the winter. Please contact us to set up a budget plan
               customized to best match your fuel oil needs!
             </div>
+            <Separator />
           </div>
+
           <div className="payment-option">
             <img
               className="payment-optionImage"
@@ -62,7 +88,9 @@ class Payment extends Component {
               pay per gallon is your set cap price. The cost of the cap program
               depends on your fuel oil usage.
             </div>
+            <Separator />
           </div>
+
           <div className="payment-option">
             <img
               className="payment-optionImage"
@@ -74,6 +102,17 @@ class Payment extends Component {
               Our fixed prepayment plan allows you to purchase some or all of
               your heating oil needs at a set price.
             </div>
+            {this.state.prepayFile !== undefined && (
+              <a
+                id="payment-prepayFormDownload"
+                href={this.state.prepayFile}
+                download="Prepay_Form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Prepay Form
+              </a>
+            )}
           </div>
         </div>
       </div>
