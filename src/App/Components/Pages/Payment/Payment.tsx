@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import prepay from "../../../../Media/graphics/prepay.svg";
 import budgetPlan from "../../../../Media/graphics/budgetPlan.svg";
 import capPrice from "../../../../Media/graphics/capPrice.svg";
-import payment from "../../../../Media/Images/Originals/payment.jpg";
+import payment from "../../../../Media/Images/Compressed/payment.jpg";
 
 import "./Payment.scss";
 import Separator from "../../Separator/Separator";
+import Helmet from "react-helmet";
 
 const sanityClient = require("@sanity/client");
 
@@ -33,6 +34,13 @@ class Payment extends Component {
   render() {
     return (
       <div id="payment">
+        <Helmet>
+          <title>Payment Options</title>
+          <meta
+            name="description"
+            content="We offer several payment options to accomodate your budget for purchasing fuel at an affordable price"
+          />
+        </Helmet>
         <div id="payment-image" style={{ backgroundImage: `url(${payment})` }}>
           <div id="payment-header">Payment</div>
         </div>

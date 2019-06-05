@@ -2,11 +2,19 @@ import React, { Component } from "react";
 
 import "./AboutUs.scss";
 import ImageCarousel from "../../ImageCarousel/ImageCarousel";
+import Helmet from "react-helmet";
 
 class AboutUs extends Component {
   render() {
     return (
       <div id="about-container">
+        <Helmet>
+          <title>About Us</title>
+          <meta
+            name="description"
+            content="Learn about our mission to keep your home comfortable"
+          />
+        </Helmet>
         <ImageCarousel />
         <div id="about-textContainer">
           <div id="about-title">About Our Business</div>

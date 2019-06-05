@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import services from "../../../../Media/Images/photoshoot/services.jpg";
+import services from "../../../../Media/Images/Compressed/services.jpg";
 
 import "./Services.scss";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
+import Helmet from "react-helmet";
 
 class Services extends Component {
   render() {
     return (
       <div id="services">
+        <Helmet>
+          <title>Our Services</title>
+          <meta
+            name="description"
+            content="We deliver heating oil and other types of fuel, and offer installation for heating appliances air conditioners "
+          />
+        </Helmet>
         <div
           id="services-image"
           style={{ backgroundImage: `url(${services})` }}
@@ -40,6 +48,14 @@ class Services extends Component {
           }
           Please contact us if you are close by to see if we can accomodate your
           needs.
+          <div className="towns-hidden" style={{ display: "none" }}>
+            Bedminster Buckingham Carversville Chalfont Doylestown Dublin
+            Furlong Hatfield Hilltown Horsham Ivyland Jamison Kitnersville New
+            Britain New Hope Ottsville Perkasie Pipersville Plumsteadville Point
+            Pleasant Quakertown Richlandtown Riegelsville Richboro Sellersville
+            Solebury Souderton Southampton Telford Warminster Warrington
+            Wrightstown Wycombe
+          </div>
         </div>
         <div id="services-mapContainer">
           <iframe

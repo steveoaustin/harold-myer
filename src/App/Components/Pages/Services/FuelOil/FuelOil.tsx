@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import oil from "../../../../../Media/Images/Originals/oil.jpg";
+import oil from "../../../../../Media/Images/Compressed/oil.jpg";
 
 import "./FuelOil.scss";
 import Separator from "../../../Separator/Separator";
+import Helmet from "react-helmet";
 
 class FuelOil extends Component {
   render() {
     return (
       <div id="fuelOil">
+        <Helmet>
+          <title>Fuel Oil</title>
+          <meta
+            name="description"
+            content="Heat your home with heating oil delivered at a reasonable price"
+          />
+        </Helmet>
         <div id="fuelOil-image" style={{ backgroundImage: `url(${oil})` }}>
           <div id="fuelOil-header">Fuel Oil</div>
         </div>
@@ -31,6 +39,14 @@ class FuelOil extends Component {
           }
           Please contact us if you are close by to see if we can accomodate your
           needs.
+          <div className="towns-hidden" style={{ display: "none" }}>
+            Bedminster Buckingham Carversville Chalfont Doylestown Dublin
+            Furlong Hatfield Hilltown Horsham Ivyland Jamison Kitnersville New
+            Britain New Hope Ottsville Perkasie Pipersville Plumsteadville Point
+            Pleasant Quakertown Richlandtown Riegelsville Richboro Sellersville
+            Solebury Souderton Southampton Telford Warminster Warrington
+            Wrightstown Wycombe
+          </div>
         </div>
         <div id="fuelOil-mapContainer">
           <iframe

@@ -3,8 +3,8 @@ import { Icon } from "@material-ui/core";
 import coal from "../../../Media/Images/Compressed/coalTrailer.jpg";
 import tanker from "../../../Media/Images/Compressed/tanker.jpg";
 import tankerGray from "../../../Media/Images/Compressed/tankerGray.jpg";
-import oldTruck from "../../../Media/Images/photoshoot/oldTruck.jpg";
-import andy from "../../../Media/Images/photoshoot/andy.jpg";
+import oldTruck from "../../../Media/Images/Compressed/oldTruck.jpg";
+import andy from "../../../Media/Images/Compressed/andy.jpg";
 
 import "./ImageCarousel.scss";
 

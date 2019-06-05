@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
 import { Icon } from "@material-ui/core";
-import home from "../../../../Media/Images/photoshoot/home2.jpg";
+import home from "../../../../Media/Images/Compressed/home.jpg";
 
 import "./Home.scss";
+import Helmet from "react-helmet";
 
 const sanityClient = require("@sanity/client");
 
@@ -31,7 +32,6 @@ class Home extends Component {
         `*[_type == "fuelList"]{currentOptions[]{fuelName, fuelPrice, fuelInfo}, asOfDate}[0]`
       )
       .then((result: any) => {
-        console.log(result);
         const list: {
           fuelType: string;
           fuelPrice: string | null;
@@ -52,6 +52,16 @@ class Home extends Component {
   render() {
     return (
       <div id="home">
+        <Helmet>
+          <title>
+            Harold Myers Inc. Fuel Oil, Air Condition, Installation, 24 Hour
+            Service
+          </title>
+          <meta
+            name="description"
+            content="Harold Myers Fuel: offering fuel oil delivery, air conditioning and water heater installation, and 24 hour emergency service to the Bucks County area."
+          />
+        </Helmet>
         <div id="home-headerMobile">
           Delivering high quality fuel at affordable prices
         </div>
@@ -66,9 +76,9 @@ class Home extends Component {
 
           <div id="home-fuelList">
             {this.state.fuelList.map(
-              (fuel: any) =>
+              (fuel: any, i: number) =>
                 (fuel.fuelPrice || fuel.fuelInfo) && (
-                  <div className="home-fuel">
+                  <div className="home-fuel" key={i}>
                     <div className="home-fuelName">{fuel.fuelType}</div>
                     {fuel.fuelPrice && (
                       <div className="home-fuelPrice">{fuel.fuelPrice}</div>
@@ -82,7 +92,8 @@ class Home extends Component {
           </div>
 
           <div id="home-fuelDate">
-            Prices are up to date as of {this.state.asOfDate}
+            Prices are up to date as of{" "}
+            <span style={{ whiteSpace: "nowrap" }}>{this.state.asOfDate}</span>
           </div>
         </div>
 

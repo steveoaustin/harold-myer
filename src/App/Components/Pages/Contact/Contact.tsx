@@ -3,6 +3,7 @@ import homebase from "../../../../Media/Images/Compressed/homebase.jpg";
 
 import "./Contact.scss";
 import { Icon } from "@material-ui/core";
+import Helmet from "react-helmet";
 
 const sanityClient = require("@sanity/client");
 
@@ -48,6 +49,13 @@ class Contact extends Component {
   render() {
     return (
       <div id="contact">
+        <Helmet>
+          <title>Contact Us</title>
+          <meta
+            name="description"
+            content="All the information you need to find us and get in contact"
+          />
+        </Helmet>
         <div
           id="contact-image"
           style={{

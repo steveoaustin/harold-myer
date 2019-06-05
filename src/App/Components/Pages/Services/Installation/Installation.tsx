@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import install from "../../../../../Media/Images/Originals/installation.jpg";
+import install from "../../../../../Media/Images/Compressed/installation.jpg";
 
 import "./Installation.scss";
 import Separator from "../../../Separator/Separator";
+import Helmet from "react-helmet";
 
 class Installation extends Component {
   render() {
     return (
       <div id="installation">
+        <Helmet>
+          <title>Installation</title>
+          <meta
+            name="description"
+            content="We install heating and cooling appliances for your home"
+          />
+        </Helmet>
         <div
           id="installation-image"
           style={{ backgroundImage: `url(${install})` }}
@@ -33,6 +41,14 @@ class Installation extends Component {
           }
           Please contact us if you are close by to see if we can accomodate your
           needs.
+          <div className="towns-hidden" style={{ display: "none" }}>
+            Bedminster Buckingham Carversville Chalfont Doylestown Dublin
+            Furlong Hatfield Hilltown Horsham Ivyland Jamison Kitnersville New
+            Britain New Hope Ottsville Perkasie Pipersville Plumsteadville Point
+            Pleasant Quakertown Richlandtown Riegelsville Richboro Sellersville
+            Solebury Souderton Southampton Telford Warminster Warrington
+            Wrightstown Wycombe
+          </div>
         </div>
         <div id="installation-mapContainer">
           <iframe

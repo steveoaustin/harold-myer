@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import feedback from "../../../../Media/Images/Originals/testimonials.jpg";
+import feedback from "../../../../Media/Images/Compressed/testimonials.jpg";
 
 import "./Testimonials.scss";
 import Separator from "../../Separator/Separator";
+import Helmet from "react-helmet";
 
 const sanityClient = require("@sanity/client");
 
@@ -30,6 +31,13 @@ class Testimonials extends Component {
   render() {
     return (
       <div id="testimonials">
+        <Helmet>
+          <title>Testimonials</title>
+          <meta
+            name="description"
+            content="Read quotes direct from our satisfied customers"
+          />
+        </Helmet>
         <div
           id="testimonials-image"
           style={{ backgroundImage: `url(${feedback})` }}
@@ -39,17 +47,16 @@ class Testimonials extends Component {
         <div id="testimonials-content">
           <div id="testimonials-title">What our customers think:</div>
           {this.state.testimonials.map((testimonial: any, i: number) => (
-            <>
-              <div key={i} className="testimonials-testimonial">
-                <div className="testimonials-quote">
-                  "{testimonial.testimonialQuote}"
-                </div>
-                <div className="testimonials-info">
-                  -{testimonial.name}, {testimonial.location}
-                </div>
+            <div key={i} className="testimonials-testimonial">
+              <div className="testimonials-quote">
+                "{testimonial.testimonialQuote}"
               </div>
+              <div className="testimonials-info">
+                -{testimonial.name}, {testimonial.location}
+              </div>
+
               {i !== this.state.testimonials.length - 1 && <Separator />}
-            </>
+            </div>
           ))}
         </div>
       </div>
