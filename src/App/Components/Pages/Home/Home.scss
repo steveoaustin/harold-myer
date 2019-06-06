@@ -7,8 +7,9 @@
   #home-headerMobile {
     font-family: $heading-font;
     font-size: $text-section-header;
+    font-style: italic;
     color: $primary;
-    background-color: $background;
+    background-color: $backgroundTransparent;
     padding: 0.25rem;
     border-radius: 1px;
     text-align: center;
@@ -24,6 +25,7 @@
     border-radius: 0;
     font-size: $text-large;
     border-top: 2px solid $primary;
+    background-color: $background;
   }
 
   @include responsive(tablet) {

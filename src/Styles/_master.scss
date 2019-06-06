@@ -5,7 +5,7 @@ $mobile: 450px;
 $tabletSmall: 600px;
 $tablet: 700px;
 $desktop: 800px;
-$stickyNav-linkCutoff: 900px;
+$stickyNav-linkCutoff: 920px;
 $widescreen: 1100px;
 
 @mixin responsive($breakpoint) {
@@ -65,6 +65,7 @@ $widescreen: 1100px;
 
 // Color Palette
 $background: #252525;
+$backgroundTransparent: #252525a1;
 $background-text: white;
 $background-secondary: #c71a1a;
 $background-secondary-text: white;
@@ -88,8 +89,8 @@ $text-tiny: 0.5rem;
 // Typefaces
 $text-font: "Metrophobic";
 $link-font: "Roboto";
-$heading-font: "Roboto Condensed";
-$company-name-font: "Roboto Condensed";
+$heading-font: "Lato";
+$company-name-font: "Lustria";
 
 // Text Style
 $header-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,

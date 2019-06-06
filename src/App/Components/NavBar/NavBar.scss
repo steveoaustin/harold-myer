@@ -204,13 +204,12 @@ $sublistLink-height: 1.25rem;
     padding-top: 0.5rem;
 
     #navBar-companyLogo {
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0.25rem;
+      width: 4rem;
+      height: 4rem;
     }
 
     #navBar-companyName {
-      font-family: $heading-font;
+      font-family: $company-name-font;
       font-size: $text-page-header;
       color: $company-name;
       text-align: center;
@@ -433,7 +432,7 @@ $sublistLink-height: 1.25rem;
     }
 
     #navBar-companyNameSticky {
-      font-family: $heading-font;
+      font-family: $company-name-font;
       font-size: $text-large;
       color: $company-name;
     }
