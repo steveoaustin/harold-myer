@@ -31,7 +31,7 @@ class ImageCarousel extends Component {
   backgroundTimer: number;
   fadeTime: number = 1000;
   displayTime: number = 4000;
-  backgroundDelay: number = 50;
+  backgroundDelay: number = 100;
 
   constructor(props: any) {
     super(props);
