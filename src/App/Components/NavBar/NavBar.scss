@@ -335,6 +335,7 @@ $sublistLink-height: 1.25rem;
         }
 
         .navBar-serviceLinks {
+          z-index: 1;
           background-color: $secondary !important;
 
           .navBar-sublistLinkContainer {

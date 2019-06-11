@@ -5,6 +5,7 @@ import tanker from "../../../Media/Images/Compressed/tanker.jpg";
 import tankerGray from "../../../Media/Images/Compressed/tankerGray.jpg";
 import oldTruck from "../../../Media/Images/Compressed/oldTruck.jpg";
 import andy from "../../../Media/Images/Compressed/andy.jpg";
+import night from "../../../Media/Images/Compressed/night.jpg";
 
 import "./ImageCarousel.scss";
 
@@ -19,7 +20,7 @@ class ImageCarousel extends Component {
     y0: number | null;
     verticalOverride: boolean;
   };
-  images: string[] = [oldTruck, tanker, coal, tankerGray, andy];
+  images: string[] = [oldTruck, tanker, coal, night, tankerGray, andy];
   imageStyle = {
     backgroundSize: "cover",
     backgroundPosition: "center"

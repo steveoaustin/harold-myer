@@ -63,12 +63,10 @@ class Home extends Component {
           />
         </Helmet>
         <div id="home-headerMobile">
-          Delivering high quality fuel at affordable prices
+          Your affordable full service oil company
         </div>
         <div id="home-image" style={{ backgroundImage: `url(${home})` }}>
-          <div id="home-header">
-            Delivering high quality fuel at affordable prices
-          </div>
+          <div id="home-header">Your affordable full service oil company</div>
         </div>
 
         <div id="home-fuelContainer">

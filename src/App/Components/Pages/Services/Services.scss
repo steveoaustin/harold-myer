@@ -48,6 +48,22 @@
     @include responsive(mobile) {
       width: 95% !important;
     }
+
+    #services-serviceContractDownload {
+      border: 2px solid $primary;
+      border-radius: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 10rem;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 0.25rem;
+      font-family: $text-font;
+      font-size: $text-standard;
+      text-decoration: none;
+      color: $primary;
+    }
   }
 
   #services-mapOverview {

@@ -54,8 +54,8 @@ class Payment extends Component {
               <br />
             </>
           }
-          We take will-call deliveries in the case that you would prefer to
-          pick-up your fuel.
+          If you prefer to order your own oil as needed, we offer prompt
+          delivery.
           {
             <>
               <br />

@@ -5,7 +5,30 @@ import "./Services.scss";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
 import Helmet from "react-helmet";
 
+const sanityClient = require("@sanity/client");
+
 class Services extends Component {
+  state: {
+    serviceContract: any;
+  };
+  client: any;
+
+  constructor(props: any) {
+    super(props);
+    this.state = { serviceContract: undefined };
+    this.client = sanityClient({
+      projectId: "ts7lblsw",
+      dataset: "cms-data",
+      useCdn: true
+    });
+    this.client
+      .fetch(
+        `*[_type == "serviceContract"]{"fileUrl" : contract.asset->url}[0]`
+      )
+      .then((result: any) => {
+        this.setState({ serviceContract: result.fileUrl });
+      });
+  }
   render() {
     return (
       <div id="services">
@@ -28,7 +51,7 @@ class Services extends Component {
           highly skilled technicians provide all of our service work. Our trucks
           and warehouse are stocked with a complete line of parts to fix all
           makes and models of oil fired heating equipment. Harold Myers, Inc.
-          does heater and air conditioner installations too.
+          does heater, oil tank and air conditioner installations too.
           {
             <>
               <br />
@@ -36,6 +59,17 @@ class Services extends Component {
             </>
           }
           We are here to meet all of your home comfort needs!
+          {this.state.serviceContract !== undefined && (
+            <a
+              id="services-serviceContractDownload"
+              href={this.state.serviceContract}
+              download="Service_Contract"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Our Service Contract
+            </a>
+          )}
         </div>
         <ServicesPanel />
         <div id="services-mapOverview">
@@ -54,7 +88,7 @@ class Services extends Component {
             Britain New Hope Ottsville Perkasie Pipersville Plumsteadville Point
             Pleasant Quakertown Richlandtown Riegelsville Richboro Sellersville
             Solebury Souderton Southampton Telford Warminster Warrington
-            Wrightstown Wycombe
+            Wrightstown Wycombe Newton
           </div>
         </div>
         <div id="services-mapContainer">

@@ -48,7 +48,7 @@ class AirConditioning extends Component {
             Britain New Hope Ottsville Perkasie Pipersville Plumsteadville Point
             Pleasant Quakertown Richlandtown Riegelsville Richboro Sellersville
             Solebury Souderton Southampton Telford Warminster Warrington
-            Wrightstown Wycombe
+            Wrightstown Wycombe Newton
           </div>
         </div>
         <div id="airConditioning-mapContainer">

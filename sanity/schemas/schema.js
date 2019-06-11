@@ -161,6 +161,20 @@ export default createSchema({
           type: "file"
         }
       ]
+    },
+    {
+      title: "Service Contract",
+      description: "The service contract for your services page",
+      name: "serviceContract",
+      type: "document",
+      fields: [
+        {
+          title: "Contract",
+          description: "Your service contract",
+          name: "contract",
+          type: "file"
+        }
+      ]
     }
   ])
 });
