@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import prepay from "../../../../Media/graphics/prepay.svg";
 import budgetPlan from "../../../../Media/graphics/budgetPlan.svg";
-import capPrice from "../../../../Media/graphics/capPrice.svg";
+//import capPrice from "../../../../Media/graphics/capPrice.svg";
 import payment from "../../../../Media/Images/Compressed/payment.jpg";
 
 import "./Payment.scss";
@@ -45,9 +45,9 @@ class Payment extends Component {
           <div id="payment-header">Payment</div>
         </div>
         <div id="payment-text">
-          We offer several different oil purchasing programs: fixed or cap price
-          budget plans, prepay, and delivery based off of current pricing. All
-          of these plans include automatic delivery.
+          We offer several different oil purchasing programs: budget, prepay,
+          and delivery based off of current pricing. All of these plans include
+          automatic delivery.
           {
             <>
               <br />
@@ -56,6 +56,13 @@ class Payment extends Component {
           }
           If you prefer to order your own oil as needed, we offer prompt
           delivery.
+          {
+            <>
+              <br />
+              <br />
+            </>
+          }
+          AutoPay is available for credit and debit card users.
           {
             <>
               <br />
@@ -81,7 +88,7 @@ class Payment extends Component {
             <Separator />
           </div>
 
-          <div className="payment-option">
+          {/* <div className="payment-option">
             <img
               className="payment-optionImage"
               src={capPrice}
@@ -97,7 +104,7 @@ class Payment extends Component {
               depends on your fuel oil usage.
             </div>
             <Separator />
-          </div>
+          </div> */}
 
           <div className="payment-option">
             <img

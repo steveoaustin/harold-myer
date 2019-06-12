@@ -4,7 +4,7 @@ import coal from "../../../Media/Images/Compressed/coalTrailer.jpg";
 import tanker from "../../../Media/Images/Compressed/tanker.jpg";
 import tankerGray from "../../../Media/Images/Compressed/tankerGray.jpg";
 import oldTruck from "../../../Media/Images/Compressed/oldTruck.jpg";
-import andy from "../../../Media/Images/Compressed/andy.jpg";
+import alan from "../../../Media/Images/Compressed/alan.jpg";
 import night from "../../../Media/Images/Compressed/night.jpg";
 
 import "./ImageCarousel.scss";
@@ -20,7 +20,7 @@ class ImageCarousel extends Component {
     y0: number | null;
     verticalOverride: boolean;
   };
-  images: string[] = [oldTruck, tanker, coal, night, tankerGray, andy];
+  images: string[] = [tankerGray, coal, tanker, oldTruck, alan, night];
   imageStyle = {
     backgroundSize: "cover",
     backgroundPosition: "center"

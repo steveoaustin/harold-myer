@@ -15,7 +15,7 @@ class AboutUs extends Component {
             content="Learn about our mission to keep your home comfortable"
           />
         </Helmet>
-        <ImageCarousel />
+
         <div id="about-textContainer">
           <div id="about-title">About Our Business</div>
           <div id="about-text">
@@ -33,6 +33,7 @@ class AboutUs extends Component {
             all while providing 24-hour emergency service!
           </div>
         </div>
+        <ImageCarousel />
       </div>
     );
   }

@@ -33,17 +33,12 @@ $arrowSize: 1.5rem;
     height: 60vw;
   }
   @include responsive(widescreen) {
-    height: 15rem;
-    background-attachment: fixed;
+    height: 25rem;
   }
 
   #carousel-image {
     height: 100%;
     background-repeat: no-repeat;
-
-    @include responsive(widescreen) {
-      background-attachment: fixed;
-    }
 
     &.carousel-imageFade {
       animation-name: fade-out;

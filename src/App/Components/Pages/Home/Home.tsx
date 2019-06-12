@@ -116,8 +116,8 @@ class Home extends Component {
               Installation
             </div>
             <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>On and Off
-              Road Diesel
+              <Icon className="home-serviceIcon">chevron_right</Icon>On and
+              Off-Road Diesel
             </div>
             <div className="home-service">
               <Icon className="home-serviceIcon">chevron_right</Icon>Air
