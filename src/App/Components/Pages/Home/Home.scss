@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 16rem;
+    height: $header-image-height-desktop;
 
     @include responsive(tablet) {
       height: 85vw;
