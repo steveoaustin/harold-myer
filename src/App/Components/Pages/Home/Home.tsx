@@ -65,13 +65,11 @@ class Home extends Component {
         <div id="home-headerMobile">
           Your affordable full service oil company
         </div>
+
         <div id="home-image" style={{ backgroundImage: `url(${home})` }}>
           <div id="home-header">Your affordable full service oil company</div>
         </div>
-
         <div id="home-fuelContainer">
-          <div id="home-fuelTitle">We offer the following fuels:</div>
-
           <div id="home-fuelList">
             {this.state.fuelList.map(
               (fuel: any, i: number) =>
@@ -88,7 +86,6 @@ class Home extends Component {
                 )
             )}
           </div>
-
           <div id="home-fuelDate">
             Prices are up to date as of{" "}
             <span style={{ whiteSpace: "nowrap" }}>{this.state.asOfDate}</span>

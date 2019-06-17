@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $header-image-height-desktop;
+    height: 16rem;
 
     @include responsive(tablet) {
       height: 85vw;
@@ -55,6 +55,7 @@
   }
 
   #home-fuelContainer {
+    padding-top: 0.5rem;
     background-color: $background;
     color: $primary;
     text-align: center;
