@@ -30,7 +30,7 @@ class AboutUs extends Component {
               </>
             }
             We'll be here to keep you warm in the winter and cool in the summer,
-            all while providing 24-hour emergency service!
+            all while providing 24-hour emergency heater service!
           </div>
         </div>
         <ImageCarousel />
