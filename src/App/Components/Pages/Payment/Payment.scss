@@ -2,18 +2,7 @@
 
 #payment {
   #payment-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $header-image-height-desktop;
-
-    @include responsive(tablet) {
-      height: $header-image-height-mobile;
-    }
+    @include parallax;
 
     #payment-header {
       font-family: $heading-font;

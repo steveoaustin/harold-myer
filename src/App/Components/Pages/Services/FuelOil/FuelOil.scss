@@ -4,18 +4,7 @@
   background-color: $page-color;
 
   #fuelOil-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $header-image-height-desktop;
-
-    @include responsive(tablet) {
-      height: 100vw;
-    }
+    @include parallax;
 
     #fuelOil-header {
       font-family: $heading-font;
