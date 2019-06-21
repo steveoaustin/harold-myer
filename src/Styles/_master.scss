@@ -58,7 +58,7 @@ $widescreen: 1100px;
   align-items: center;
   height: $header-image-height-mobile;
 
-  @include responsive(desktop) {
+  @include responsive(widescreen) {
     height: $header-image-height-desktop;
     background-attachment: fixed;
   }
