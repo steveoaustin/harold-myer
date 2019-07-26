@@ -25,7 +25,6 @@ class App extends Component {
         <NavBar />
         <ScrollToTop>
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route exact path="/aboutUs" component={AboutUs} />
             <Route exact path="/services" component={Services} />
             <Route
@@ -42,6 +41,7 @@ class App extends Component {
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/testimonials" component={Testimonials} />
             <Route exact path="/contactUs" component={Contact} />
+            <Route path="/" component={Home} />
           </Switch>
         </ScrollToTop>
         <Footer />
