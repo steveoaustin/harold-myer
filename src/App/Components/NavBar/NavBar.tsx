@@ -143,7 +143,7 @@ class NavBar extends Component {
                 (this.state.displayingTopMobileMenu &&
                   !this.state.showTopMobileLinks)
               }
-              transitionOnAppear={false}
+              transitionOnAppear={true}
             >
               {this.navLinks(this.state.showTopMobileLinks, true)}
             </SlideDown>
@@ -184,7 +184,7 @@ class NavBar extends Component {
               (this.state.displayingStickyMobileMenu &&
                 !this.state.showStickyMobileLinks)
             }
-            transitionOnAppear={false}
+            transitionOnAppear={true}
           >
             {this.navLinks(this.state.showStickyMobileLinks, false)}
           </SlideDown>
@@ -306,7 +306,7 @@ class NavBar extends Component {
                 ? !this.state.showServicesTop
                 : !this.state.showServicesSticky
             }
-            transitionOnAppear={false}
+            transitionOnAppear={true}
           >
             <ul
               id={`${
