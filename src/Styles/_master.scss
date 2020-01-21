@@ -64,6 +64,12 @@ $widescreen: 1100px;
   }
 }
 
+@mixin shadow($color, $thickness) {
+  text-shadow: (-$thickness) (-$thickness) 0 $color,
+    $thickness (-$thickness) 0 $color, -$thickness $thickness 0 $color,
+    $thickness $thickness 0 $color !important;
+}
+
 // Color Palette
 $background: #252525;
 $backgroundTransparent: #252525a1;

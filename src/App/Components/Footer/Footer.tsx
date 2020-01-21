@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import logo from "../../../Media/graphics/logo.svg";
-import { NavLink } from "react-router-dom";
-import facebook from "../../../Media/graphics/facebook.png";
+import './Footer.scss';
 
-import "./Footer.scss";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import facebook from '../../../Media/graphics/facebook.png';
+import logo from '../../../Media/graphics/logo.svg';
+import Bam from '../Bam/Bam';
 
 const sanityClient = require("@sanity/client");
 
@@ -31,6 +33,9 @@ class Footer extends Component {
   }
 
   render() {
+    const date = new Date();
+    const year = date.getFullYear();
+
     return (
       <div id="footer">
         <div id="footer-logoContainer">
@@ -48,10 +53,8 @@ class Footer extends Component {
           >
             <img id="footer-facebookLogo" src={facebook} alt="facebook link" />
           </div>
-          <div id="footer-copyright">&copy; 2019 Harold Myers Inc.</div>
-          <a id="footer-siteBy" href="https://www.ab-websites.com">
-            Built by AB Website Development
-          </a>
+          <div id="footer-copyright">&copy; {year} Harold Myers Inc.</div>
+          <Bam />
         </div>
       </div>
     );

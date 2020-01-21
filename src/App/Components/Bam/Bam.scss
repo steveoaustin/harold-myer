@@ -1,0 +1,48 @@
+@import "../../../styles/master";
+
+.bam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  .bam-container {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 0.5rem;
+    margin-left: auto;
+
+    @include responsive(tabletSmall) {
+      margin-left: 0;
+    }
+
+    &:hover {
+      .bam-text {
+        color: $primary;
+      }
+    }
+
+    .bam-text {
+      font-family: "Bangers";
+      font-size: 1rem;
+      color: black;
+      text-align: right;
+      padding-right: 0.5rem;
+      transition: color 0.3s linear;
+      letter-spacing: 0.75px;
+      @include shadow(white, 1px);
+
+      @include responsive(tabletSmall) {
+        font-size: 0.75rem;
+        color: $primary;
+      }
+    }
+
+    .bam-logo {
+      width: auto;
+      height: 2rem;
+    }
+  }
+}

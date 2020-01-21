@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router";
-import NavBar from "./Components/NavBar/NavBar";
-import ScrollToTop from "./Components/Tools/ScrollToTop";
-import Home from "./Components/Pages/Home/Home";
-import AboutUs from "./Components/Pages/AboutUs/AboutUs";
-import Services from "./Components/Pages/Services/Services";
-import Payment from "./Components/Pages/Payment/Payment";
-import Testimonials from "./Components/Pages/Testimonials/Testimonials";
-import Contact from "./Components/Pages/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
-import AirConditioning from "./Components/Pages/Services/AirConditioning/AirConditioning";
-import FuelOil from "./Components/Pages/Services/FuelOil/FuelOil";
-import Installation from "./Components/Pages/Services/Installation/Installation";
+import './App.scss';
 
-import "./App.scss";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router';
 
-require("@babel/polyfill");
+import Footer from './Components/Footer/Footer';
+import NavBar from './Components/NavBar/NavBar';
+import AboutUs from './Components/Pages/AboutUs/AboutUs';
+import Contact from './Components/Pages/Contact/Contact';
+import Home from './Components/Pages/Home/Home';
+import Payment from './Components/Pages/Payment/Payment';
+import AirConditioning from './Components/Pages/Services/AirConditioning/AirConditioning';
+import FuelOil from './Components/Pages/Services/FuelOil/FuelOil';
+import Installation from './Components/Pages/Services/Installation/Installation';
+import Services from './Components/Pages/Services/Services';
+import Testimonials from './Components/Pages/Testimonials/Testimonials';
+import ScrollToTop from './Components/Tools/ScrollToTop';
+
 require("es6-object-assign/auto");
 
 class App extends Component {
