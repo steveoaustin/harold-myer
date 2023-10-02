@@ -104,6 +104,8 @@
   }
 
   #home-serviceListContainer {
+    margin: 8rem 0rem;
+
     #home-serviceListHeading {
       margin: auto;
       font-family: $heading-font;
@@ -133,7 +135,7 @@
 
       .home-service {
         display: flex;
-        font-size: $text-standard;
+        font-size: $text-large;
         font-family: $text-font;
         font-weight: bold;
         box-sizing: border-box;

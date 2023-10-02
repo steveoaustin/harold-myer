@@ -1,14 +1,16 @@
 @import "../../../Styles/master";
 
 #footer {
-  background-color: $background-secondary;
-  color: $background-secondary-text;
+  background-color: $background-tertiary;
+  color: $background-tertiary-text;
+  padding-top: 2rem;
 }
 
 #footer-logoContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 
   #footer-logo {
     height: $rem-4;
@@ -39,7 +41,7 @@
     .footer-link {
       display: block;
       width: 100%;
-      color: $background-secondary-text;
+      color: $background-tertiary-text;
       text-decoration: none;
     }
   }
