@@ -6,7 +6,8 @@
   #home-header,
   #home-headerMobile {
     font-family: $heading-font;
-    font-size: $text-section-header;
+    font-size: $text-large;
+    font-weight: bold;
     font-style: italic;
     color: $primary;
     background-color: $backgroundTransparent;
@@ -25,7 +26,7 @@
     border-radius: 0;
     font-size: $text-large;
     border-top: 2px solid $primary;
-    background-color: $background;
+    @extend %background-gradient-dark;
   }
 
   @include responsive(tablet) {
@@ -43,9 +44,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 2rem;
     align-items: center;
-    height: $header-image-height-desktop;
+    height: 50vh;
 
     @include responsive(tablet) {
       height: 85vw;
@@ -56,7 +59,7 @@
 
   #home-fuelContainer {
     padding-top: $rem-05;
-    background-color: $background;
+    @extend %background-gradient-dark;
     color: $primary;
     text-align: center;
     font-family: $text-font;
@@ -103,35 +106,42 @@
   #home-serviceListContainer {
     #home-serviceListHeading {
       margin: auto;
-      font-family: $text-font;
-      font-size: $text-large;
+      font-family: $heading-font;
+      font-size: $text-section-header;
       text-align: center;
-      padding-top: 1rem;
-      padding-bottom: $rem-05;
+      margin: 4rem 0rem;
+      font-weight: bold;
       color: $primary-contrast;
-      width: 95%;
     }
 
     #home-serviceList {
-      margin: auto;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding-bottom: $rem-05;
+      padding-left: 16.5%;
+
+      @include responsive(tablet) {
+        padding-left: unset;
+        justify-content: center;
+      }
+
+      @include responsive(widescreen) {
+        padding-left: 25%;
+      }
 
       .home-service {
         display: flex;
-        align-items: center;
         font-size: $text-standard;
         font-family: $text-font;
+        font-weight: bold;
         box-sizing: border-box;
-        padding: $rem-025;
-        flex-basis: 40%;
-        justify-content: center;
+        padding: 0.5rem;
+        flex-basis: 50%;
 
         @include responsive(widescreen) {
-          flex-basis: 35%;
+          flex-basis: 50%;
         }
 
         &#home-serviceLong {

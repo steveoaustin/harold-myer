@@ -3,7 +3,7 @@ $media: screen;
 $mobileSmall: 375px;
 $mobile: 450px;
 $tabletSmall: 600px;
-$tablet: 700px;
+$tablet: 850px;
 $desktop: 800px;
 $stickyNav-linkCutoff: 920px;
 $widescreen: 1100px;
@@ -75,13 +75,19 @@ $background: #020b21;
 $backgroundTransparent: #061231a1;
 $background-text: white;
 $background-secondary: #d34927;
-$background-secondary-text: white;
+$background-secondary-text: #020b21;
 $page-color: white;
 $primary: #d34927;
 $primary-contrast: black;
 $secondary: #36454f;
 $secondary-contrast: white;
 $company-name: #d34927;
+
+// Gradients
+%background-gradient-dark {
+  background: #020b21;
+  background: linear-gradient(15deg, #020b21, #051336);
+}
 
 // Text Sizing
 $text-page-header: 2rem;

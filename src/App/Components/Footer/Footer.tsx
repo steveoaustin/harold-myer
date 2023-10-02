@@ -1,11 +1,11 @@
-import './Footer.scss';
+import "./Footer.scss";
 
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
-import facebook from '../../../Media/graphics/facebook.png';
-import logo from '../../../Media/graphics/logo.svg';
-import Bam from '../Bam/Bam';
+import facebook from "../../../Media/graphics/facebook-logo.png";
+import logo from "../../../Media/graphics/logo.png";
+import Bam from "../Bam/Bam";
 
 const sanityClient = require("@sanity/client");
 
@@ -38,13 +38,9 @@ class Footer extends Component {
 
     return (
       <div id="footer">
-        <div id="footer-logoContainer">
-          <NavLink exact={true} to="/">
-            <div id="footer-logoBackground">
-              <img src={logo} id="footer-logo" alt="Harold Myers logo" />
-            </div>
-          </NavLink>
-        </div>
+        <NavLink id="footer-logoContainer" exact={true} to="/">
+          <img src={logo} id="footer-logo" alt="Harold Myers logo" />
+        </NavLink>
         <div id="footer-links">{this.footerLinks()}</div>
         <div id="footer-info">
           <div

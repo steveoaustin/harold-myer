@@ -1,10 +1,11 @@
+import "./ServicesPanel.scss";
+
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import fuelDroplet from "../../../Media/graphics/fuelDroplet.svg";
-import snowflake from "../../../Media/graphics/snowflake.svg";
-import installation from "../../../Media/graphics/installation.svg";
 
-import "./ServicesPanel.scss";
+import airConditioning from "../../../Media/graphics/air-conditioning.png";
+import oilTruck from "../../../Media/graphics/fuel-oil-truck.png";
+import pipeWrench from "../../../Media/graphics/pipe-wrench.png";
 
 class ServicesPanel extends Component {
   render() {
@@ -16,63 +17,32 @@ class ServicesPanel extends Component {
           to="services/fuelOil"
           className="servicesPanel-service"
         >
-          <div
-            id="servicesPanel-fuelOil"
-            className="servicesPanel-serviceContent"
-          >
-            <div className="servicesPanel-iconContainer">
-              <div className="servicesPanel-iconBackground">
-                <img
-                  className="servicesPanel-icon"
-                  src={fuelDroplet}
-                  alt="fuel oil"
-                />
-              </div>
-            </div>
-            Fuel Oil
-          </div>
+          <img className="servicesPanel-icon" src={oilTruck} alt="fuel oil" />
+          Fuel Oil
         </NavLink>
         <NavLink
           exact={true}
-          to="services/installation"
+          to="services/pipe-wrench"
           className="servicesPanel-service"
         >
-          <div
-            id="servicesPanel-installation"
-            className="servicesPanel-serviceContent"
-          >
-            <div className="servicesPanel-iconContainer">
-              <div className="servicesPanel-iconBackground">
-                <img
-                  className="servicesPanel-icon"
-                  src={installation}
-                  alt="installation"
-                />
-              </div>
-            </div>
-            Installation
-          </div>
+          <img
+            className="servicesPanel-icon"
+            src={pipeWrench}
+            alt="pipe-wrench"
+          />
+          Installation
         </NavLink>
         <NavLink
           exact={true}
           to="services/airConditioning"
           className="servicesPanel-service"
         >
-          <div
-            id="servicesPanel-airConditioning"
-            className="servicesPanel-serviceContent"
-          >
-            <div className="servicesPanel-iconContainer">
-              <div className="servicesPanel-iconBackground">
-                <img
-                  className="servicesPanel-icon"
-                  src={snowflake}
-                  alt="air conditioning"
-                />
-              </div>
-            </div>
-            Air Conditioning
-          </div>
+          <img
+            className="servicesPanel-icon"
+            src={airConditioning}
+            alt="air conditioning"
+          />
+          Air Conditioning
         </NavLink>
       </div>
     );

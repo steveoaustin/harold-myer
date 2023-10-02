@@ -87,14 +87,11 @@ $sublistLink-height: $rem-1-25;
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  @include responsive(desktopThin) {
-  }
 }
 
 #navBar-navigation,
 #navBar-stickyNavigation {
-  background-color: $background;
+  @extend %background-gradient-dark;
 
   .navBar-mobileNavMenu {
     display: none;
@@ -164,7 +161,7 @@ $sublistLink-height: $rem-1-25;
           margin: 0;
           padding: 0;
           width: 6rem;
-          background-color: $background;
+          @extend %background-gradient-dark;
           text-align: center;
 
           .navBar-sublistLinkContainer {
@@ -464,7 +461,6 @@ $sublistLink-height: $rem-1-25;
         flex-wrap: wrap;
         width: 100%;
         font-size: $text-link;
-        background-color: $background;
 
         &.navBar-mobileLinksShown {
           height: auto;

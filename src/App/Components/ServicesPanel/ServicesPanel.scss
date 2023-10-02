@@ -2,64 +2,54 @@
 
 #servicesPanel {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-top: $rem-2;
-  padding-bottom: 1rem;
-  background-color: $background;
+  flex-wrap: wrap;
+  padding: 8rem 0;
+  @extend %background-gradient-dark;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+  }
 
   #servicesPanel-title {
-    font-size: $text-section-header;
-    text-align: center;
-    font-family: $heading-font;
-    color: $primary;
     flex-basis: 100%;
-    padding-bottom: 1rem;
+    margin-bottom: 6rem;
+    color: $primary;
+    font-family: $heading-font;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
   }
 
   .servicesPanel-service {
-    flex-basis: 33%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex-basis: 33%;
     color: $background-text;
     font-family: $text-font;
     font-size: $text-large;
-    text-align: center;
-    padding-bottom: 1rem;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     @include responsive(tablet) {
-      flex-basis: 95%;
+      margin: 4rem 0;
     }
 
-    .servicesPanel-serviceContent {
-      flex-basis: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .servicesPanel-icon {
+      height: $rem-5;
+      width: auto;
+      margin-bottom: 1.5rem;
+      transition: 0.2s ease-in-out all;
 
-    .servicesPanel-iconContainer {
-      flex-basis: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      .servicesPanel-iconBackground {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: $rem-5;
-        height: $rem-5;
-        margin-bottom: $rem-05;
-
-        .servicesPanel-icon {
-          width: $rem-5;
-          height: $rem-5;
-        }
+      &:hover {
+        scale: 1.1;
       }
     }
   }
