@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import ServicesPanel from "../../ServicesPanel/ServicesPanel";
-import { Icon } from "@material-ui/core";
-import home from "../../../../Media/Images/Compressed/home.jpg";
-
 import "./Home.scss";
+
+import React, { Component } from "react";
 import Helmet from "react-helmet";
+
+import { Icon } from "@material-ui/core";
+
+import home from "../../../../Media/Images/Compressed/home.jpg";
+import ServicesPanel from "../../ServicesPanel/ServicesPanel";
 
 const sanityClient = require("@sanity/client");
 
@@ -87,7 +89,7 @@ class Home extends Component {
             )}
           </div>
           <div id="home-fuelDate">
-            Prices are up to date as of{" "}
+            TO;DO: Replace with the thing{" "}
             <span style={{ whiteSpace: "nowrap" }}>{this.state.asOfDate}</span>
           </div>
         </div>

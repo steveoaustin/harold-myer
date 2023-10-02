@@ -1,11 +1,13 @@
+import "./NavBar.scss";
+
 import React, { Component } from "react";
-import facebook from "../../../Media/graphics/facebook.png";
 import { NavLink } from "react-router-dom";
 import { SlideDown } from "react-slidedown";
-import { Icon } from "@material-ui/core";
-import logo from "../../../Media/graphics/logo.svg";
 
-import "./NavBar.scss";
+import { Icon } from "@material-ui/core";
+
+import facebook from "../../../Media/graphics/facebook-custom.png";
+import logo from "../../../Media/graphics/logo.svg";
 
 const sanityClient = require("@sanity/client");
 
@@ -56,7 +58,7 @@ class NavBar extends Component {
 
   componentDidMount() {
     if (window) {
-      window.addEventListener("scroll", e => this.checkScrollPosition());
+      window.addEventListener("scroll", (e) => this.checkScrollPosition());
       window.addEventListener("resize", () => this.handleResize());
       this.handleResize();
     }
@@ -125,7 +127,7 @@ class NavBar extends Component {
               <div
                 id="navBar-topNavMobileMenu"
                 className="navBar-mobileNavMenu"
-                onClick={e => {
+                onClick={(e) => {
                   this.stopClickPropagation(e);
                   this.setState({
                     showTopMobileLinks: !this.state.showTopMobileLinks
@@ -167,7 +169,7 @@ class NavBar extends Component {
             <div
               id="navBar-stickyNavMobileMenu"
               className="navBar-mobileNavMenu"
-              onClick={e => {
+              onClick={(e) => {
                 this.stopClickPropagation(e);
                 this.setState({
                   showStickyMobileLinks: !this.state.showStickyMobileLinks
@@ -276,7 +278,7 @@ class NavBar extends Component {
             <span className="navBar-linkText">SERVICES</span>
             <div
               className="navBar-expandServicesIconContainer"
-              onClick={e => {
+              onClick={(e) => {
                 this.stopClickPropagation(e);
                 topLinks
                   ? this.setState({

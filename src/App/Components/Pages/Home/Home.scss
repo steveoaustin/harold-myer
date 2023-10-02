@@ -46,9 +46,9 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
     align-items: center;
-    height: 50vh;
+    height: 55vh;
 
     @include responsive(tablet) {
       height: 85vw;
@@ -58,18 +58,11 @@
   }
 
   #home-fuelContainer {
-    padding-top: $rem-05;
+    padding: 8rem 0;
     @extend %background-gradient-dark;
     color: $primary;
     text-align: center;
     font-family: $text-font;
-
-    #home-fuelTitle {
-      font-family: $heading-font;
-      font-size: $text-large;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
 
     #home-fuelList {
       display: flex;
@@ -78,7 +71,7 @@
 
       .home-fuel {
         padding-bottom: $rem-075;
-        font-size: $text-standard;
+        font-size: $text-large;
         box-sizing: border-box;
         flex-basis: 25%;
 
@@ -91,14 +84,14 @@
         }
 
         .home-fuelName {
-          font-size: $text-large;
+          font-size: $text-section-header;
+          font-weight: bold;
         }
       }
     }
 
     #home-fuelDate {
-      padding: $rem-05;
-      font-style: italic;
+      padding-top: 4rem;
       font-size: $text-standard;
     }
   }

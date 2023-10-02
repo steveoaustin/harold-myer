@@ -3,7 +3,7 @@ import "./Footer.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import facebook from "../../../Media/graphics/facebook-logo.png";
+import facebook from "../../../Media/graphics/facebook-custom.png";
 import logo from "../../../Media/graphics/logo.png";
 import Bam from "../Bam/Bam";
 
