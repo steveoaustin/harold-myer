@@ -9,12 +9,12 @@
       font-size: $text-page-header;
       color: $primary;
       background-color: $backgroundTransparent;
-      padding: 0.25rem;
+      padding: $rem-025;
       border-radius: 1px;
 
       @include responsive(tabletSmall) {
         font-size: $text-section-header;
-        padding: 0.15rem;
+        padding: $rem-015;
       }
     }
   }
@@ -75,8 +75,8 @@
 
       @include responsive(widescreen) {
         flex-basis: 50%;
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
+        padding-right: $rem-05;
+        padding-left: $rem-05;
 
         .separator {
           display: none;
@@ -84,20 +84,20 @@
       }
 
       .payment-optionImage {
-        width: 5rem;
-        height: 5rem;
+        width: $rem-5;
+        height: $rem-5;
         padding-bottom: 1rem;
       }
 
       .payment-optionTitle {
         flex-basis: 100%;
-        padding-bottom: 0.5rem;
+        padding-bottom: $rem-05;
       }
 
       .payment-optionDescription {
         box-sizing: border-box;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
+        padding-left: $rem-025;
+        padding-right: $rem-025;
         flex-basis: 100%;
         font-size: $text-small;
       }
@@ -109,7 +109,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 1rem;
-        padding: 0.25rem;
+        padding: $rem-025;
         font-family: $text-font;
         font-size: $text-standard;
         text-decoration: none;

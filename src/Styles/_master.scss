@@ -49,14 +49,14 @@ $widescreen: 1100px;
 }
 
 @mixin parallax {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: $header-image-height-mobile;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 
   @include responsive(widescreen) {
     height: $header-image-height-desktop;
@@ -71,27 +71,27 @@ $widescreen: 1100px;
 }
 
 // Color Palette
-$background: #252525;
-$backgroundTransparent: #252525a1;
+$background: #020b21;
+$backgroundTransparent: #061231a1;
 $background-text: white;
-$background-secondary: #c71a1a;
+$background-secondary: #d34927;
 $background-secondary-text: white;
 $page-color: white;
-$primary: #ed6028;
+$primary: #d34927;
 $primary-contrast: black;
 $secondary: #36454f;
 $secondary-contrast: white;
-$company-name: #ed6028;
+$company-name: #d34927;
 
 // Text Sizing
-$text-page-header: 1.5rem;
-$text-section-header: 1.25rem;
-$text-large: 1rem;
-$text-link: 0.6rem;
-$text-linkSmall: 0.5rem;
-$text-standard: 0.7rem;
-$text-small: 0.65rem;
-$text-tiny: 0.5rem;
+$text-page-header: 2rem;
+$text-section-header: 1.75rem;
+$text-large: 1.35rem;
+$text-link: 0.85rem;
+$text-linkSmall: 0.75rem;
+$text-standard: 1.1rem;
+$text-small: 0.85rem;
+$text-tiny: 0.75rem;
 
 // Typefaces
 $text-font: "Metrophobic";
@@ -106,3 +106,21 @@ $header-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
 // Element Sizing
 $header-image-height-desktop: 20rem;
 $header-image-height-mobile: 100vw;
+
+// Erase Tyler
+$rem-015: 0.15rem;
+$rem-025: 0.25rem;
+$rem-05: 0.5rem;
+$rem-065: 0.65rem;
+$rem-075: 0.75rem;
+$rem-085: 0.85rem;
+$rem-1-25: 1.25rem;
+$rem-1-5: 1.5rem;
+$rem-1-75: 1.75rem;
+$rem-2: 2rem;
+$rem-3: 3rem;
+$rem-4: 4rem;
+$rem-5: 5rem;
+$rem-7: 7rem;
+$rem-10: 10rem;
+$rem-25: 25rem;

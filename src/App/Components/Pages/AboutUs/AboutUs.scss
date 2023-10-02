@@ -16,14 +16,14 @@
 
     @include responsive(tabletSmall) {
       font-size: $text-section-header;
-      padding-left: 0.15rem;
-      padding-right: 0.15rem;
+      padding-left: $rem-015;
+      padding-right: $rem-015;
     }
   }
 
   #about-text {
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: $rem-2;
     font-family: $text-font;
     font-size: $text-standard;
     text-align: center;

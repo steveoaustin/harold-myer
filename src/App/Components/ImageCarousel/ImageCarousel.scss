@@ -1,6 +1,6 @@
 @import "../../../Styles/master";
 
-$arrowSize: 1.5rem;
+$arrowSize: $rem-1-5;
 
 @keyframes fade-in {
   from {
@@ -32,7 +32,7 @@ $arrowSize: 1.5rem;
     height: 60vw;
   }
   @include responsive(widescreen) {
-    height: 25rem;
+    height: $rem-5;
   }
 
   #carousel-image {

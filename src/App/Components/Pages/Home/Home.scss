@@ -10,13 +10,13 @@
     font-style: italic;
     color: $primary;
     background-color: $backgroundTransparent;
-    padding: 0.25rem;
+    padding: $rem-025;
     border-radius: 1px;
     text-align: center;
 
     @include responsive(tablet) {
       font-size: $text-section-header;
-      padding: 0.15rem;
+      padding: $rem-015;
     }
   }
 
@@ -55,7 +55,7 @@
   }
 
   #home-fuelContainer {
-    padding-top: 0.5rem;
+    padding-top: $rem-05;
     background-color: $background;
     color: $primary;
     text-align: center;
@@ -74,7 +74,7 @@
       flex-wrap: wrap;
 
       .home-fuel {
-        padding-bottom: 0.75rem;
+        padding-bottom: $rem-075;
         font-size: $text-standard;
         box-sizing: border-box;
         flex-basis: 25%;
@@ -94,7 +94,7 @@
     }
 
     #home-fuelDate {
-      padding: 0.5rem;
+      padding: $rem-05;
       font-style: italic;
       font-size: $text-standard;
     }
@@ -107,7 +107,7 @@
       font-size: $text-large;
       text-align: center;
       padding-top: 1rem;
-      padding-bottom: 0.5rem;
+      padding-bottom: $rem-05;
       color: $primary-contrast;
       width: 95%;
     }
@@ -118,7 +118,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding-bottom: 0.5rem;
+      padding-bottom: $rem-05;
 
       .home-service {
         display: flex;
@@ -126,7 +126,7 @@
         font-size: $text-standard;
         font-family: $text-font;
         box-sizing: border-box;
-        padding: 0.25rem;
+        padding: $rem-025;
         flex-basis: 40%;
         justify-content: center;
 
@@ -140,7 +140,7 @@
 
         @include responsive(tablet) {
           flex-basis: 100%;
-          padding: 0.125rem;
+          padding: 0.12$rem-5;
           justify-content: center;
 
           #home-serviceLongItem {
