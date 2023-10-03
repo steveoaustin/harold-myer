@@ -11,12 +11,12 @@
       font-size: $text-page-header;
       color: $primary;
       background-color: $backgroundTransparent;
-      padding: $rem-025;
+      padding: 0.25rem;
       border-radius: 1px;
 
       @include responsive(tabletSmall) {
         font-size: $text-section-header;
-        padding: $rem-015;
+        padding: 0.15rem;
       }
     }
   }
@@ -51,8 +51,8 @@
 
   #airConditioning-mapOverview {
     padding-bottom: 1rem;
-    padding-right: $rem-025;
-    padding-left: $rem-025;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
     font-size: $text-standard;
     font-family: $text-font;
     text-align: center;
@@ -67,7 +67,7 @@
       height: 60vh;
       border: none;
       padding: 0;
-      margin-top: $rem-05;
+      margin-top: 0.5rem;
       top: -65px !important;
       position: relative;
     }

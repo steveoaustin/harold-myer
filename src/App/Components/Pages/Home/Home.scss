@@ -4,7 +4,7 @@
   background-color: $page-color;
 
   .home-header {
-    padding: $rem-025;
+    padding: 0.25rem;
     border-radius: 1px;
     background-color: $backgroundTransparent;
     color: $primary;
@@ -64,7 +64,7 @@
 
       .home-fuel {
         flex-basis: 25%;
-        padding-bottom: $rem-075;
+        padding-bottom: 0.75rem;
         box-sizing: border-box;
         font-size: $text-large;
 
@@ -107,7 +107,7 @@
       align-items: center;
       justify-content: flex-start;
       flex-wrap: wrap;
-      padding-bottom: $rem-05;
+      padding-bottom: 0.5rem;
       padding-left: 16.5%;
 
       @include responsive(tablet) {
@@ -135,7 +135,7 @@
         @include responsive(tablet) {
           justify-content: center;
           flex-basis: 100%;
-          padding: 0.12$rem-5;
+          padding: 0.125rem;
 
           #home-serviceLongItem {
             text-align: center;

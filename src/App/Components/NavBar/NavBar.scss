@@ -1,10 +1,10 @@
 @import "../../../Styles/master";
 
-$topNav-height: $rem-3;
-$stickyNav-height: $rem-2;
-$link-height: $rem-1-5;
-$mobileLink-height: $rem-1-25;
-$sublistLink-height: $rem-1-25;
+$topNav-height: 3rem;
+$stickyNav-height: 2rem;
+$link-height: 1.5rem;
+$mobileLink-height: 1.25rem;
+$sublistLink-height: 1.25rem;
 
 .navBar-linkSlidedown,
 .navBar-servicesSlidedown {
@@ -12,7 +12,7 @@ $sublistLink-height: $rem-1-25;
 }
 
 #navBar-infoBar {
-  min-height: $rem-1-5;
+  min-height: 1.5rem;
   background-color: $background-secondary;
   color: $background-secondary-text;
   display: flex;
@@ -32,8 +32,8 @@ $sublistLink-height: $rem-1-25;
   }
 
   #navBar-facebookLink {
-    margin-left: $rem-05;
-    margin-right: $rem-05;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 
     &:hover {
       cursor: pointer;
@@ -47,7 +47,7 @@ $sublistLink-height: $rem-1-25;
   }
 
   #navBar-phoneNumber {
-    margin-right: $rem-05;
+    margin-right: 0.5rem;
   }
 
   #navBar-address {
@@ -67,7 +67,7 @@ $sublistLink-height: $rem-1-25;
   .navBar-infoIcon {
     color: $background-secondary-text;
     font-size: 1rem;
-    margin-right: $rem-025;
+    margin-right: 0.25rem;
   }
 
   @include responsive(mobile) {
@@ -115,7 +115,7 @@ $sublistLink-height: $rem-1-25;
           text-decoration: none;
           font-family: $link-font;
           color: $background-text;
-          height: $rem-1-25;
+          height: 1.25rem;
 
           &:hover {
             color: $primary;
@@ -196,12 +196,12 @@ $sublistLink-height: $rem-1-25;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: $rem-05;
-    padding-top: $rem-05;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
 
     #navBar-companyLogo {
-      width: $rem-4;
-      height: $rem-4;
+      width: 4rem;
+      height: 4rem;
     }
 
     #navBar-companyName {
@@ -231,10 +231,10 @@ $sublistLink-height: $rem-1-25;
 
     @include responsive(mobile) {
       .navBar-mobileLinksMenu {
-        font-size: $rem-1-25;
+        font-size: 1.25rem;
       }
       #navBar-companyName {
-        font-size: $rem-085;
+        font-size: 0.85rem;
         margin-right: 1rem;
 
         #navBar-trustedSince {
@@ -243,8 +243,8 @@ $sublistLink-height: $rem-1-25;
       }
 
       #navBar-companyLogo {
-        width: $rem-2;
-        height: $rem-2;
+        width: 2rem;
+        height: 2rem;
       }
     }
   }
@@ -268,7 +268,7 @@ $sublistLink-height: $rem-1-25;
 
         .navBar-link {
           width: 100%;
-          height: $rem-1-25;
+          height: 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -313,7 +313,7 @@ $sublistLink-height: $rem-1-25;
 
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: $rem-05;
+          padding-left: 0.5rem;
         }
 
         .navBar-link-active {
@@ -364,7 +364,7 @@ $sublistLink-height: $rem-1-25;
     @include responsive(desktop) {
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: $rem-1-25;
+          padding-left: 1.25rem;
         }
       }
     }
@@ -372,7 +372,7 @@ $sublistLink-height: $rem-1-25;
     @include responsive(widescreen) {
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: $rem-2;
+          padding-left: 2rem;
         }
       }
     }
@@ -419,9 +419,9 @@ $sublistLink-height: $rem-1-25;
     justify-content: center;
 
     #navBar-companyLogoSticky {
-      width: $rem-1-75;
-      height: $rem-1-75;
-      padding: 0.12$rem-5;
+      width: 1.75rem;
+      height: 1.75rem;
+      padding: 0.125rem;
     }
 
     #navBar-companyNameSticky {
@@ -432,7 +432,7 @@ $sublistLink-height: $rem-1-25;
 
     @include responsive(mobile) {
       #navBar-companyNameSticky {
-        font-size: $rem-085;
+        font-size: 0.85rem;
         margin-right: 1rem;
       }
     }
@@ -524,7 +524,7 @@ $sublistLink-height: $rem-1-25;
       min-height: $stickyNav-height !important;
 
       .navBar-linkContainer {
-        padding-left: $rem-065;
+        padding-left: 0.65rem;
         z-index: 1 !important;
         min-height: $stickyNav-height;
 
@@ -587,7 +587,7 @@ $sublistLink-height: $rem-1-25;
 
     @include responsive(desktop) {
       .navBar-linkContainer {
-        padding-left: $rem-05;
+        padding-left: 0.5rem;
       }
     }
 

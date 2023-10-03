@@ -13,7 +13,7 @@
   margin-bottom: 2rem;
 
   #footer-logo {
-    height: $rem-4;
+    height: 4rem;
     width: auto;
   }
 }
@@ -31,7 +31,7 @@
 
   .footer-linkContainer {
     display: block;
-    padding-top: $rem-05;
+    padding-top: 0.5rem;
     padding: 0.5rem 2rem;
 
     @include responsive(mobile) {
@@ -51,27 +51,27 @@
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  padding: $rem-025;
-  padding-top: $rem-025;
+  padding: 0.25rem;
+  padding-top: 0.25rem;
   font-family: $text-font;
   font-size: $text-tiny;
 
   @include responsive(tabletSmall) {
     justify-content: center;
     height: auto;
-    padding-top: $rem-025 !important;
+    padding-top: 0.25rem !important;
 
     #footer-facebookLink {
       display: flex;
       align-items: flex-end;
       justify-content: center;
       flex-basis: 100%;
-      padding: $rem-025;
+      padding: 0.25rem;
     }
 
     #footer-copyright {
       flex-basis: 100%;
-      padding-bottom: $rem-025;
+      padding-bottom: 0.25rem;
     }
   }
 
@@ -83,8 +83,8 @@
   }
 
   #footer-facebookLink {
-    padding-left: $rem-025;
-    padding-right: $rem-05;
+    padding-left: 0.25rem;
+    padding-right: 0.5rem;
     #footer-facebookLogo {
       height: 1rem;
       width: 1rem;

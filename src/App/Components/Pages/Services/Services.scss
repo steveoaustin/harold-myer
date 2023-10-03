@@ -11,12 +11,12 @@
       font-size: $text-page-header;
       color: $primary;
       background-color: $backgroundTransparent;
-      padding: $rem-025;
+      padding: 0.25rem;
       border-radius: 1px;
 
       @include responsive(tabletSmall) {
         font-size: $text-section-header;
-        padding: $rem-015;
+        padding: 0.15rem;
       }
     }
   }
@@ -24,7 +24,7 @@
   #services-overview {
     margin: auto;
     padding-top: 1rem;
-    padding-bottom: $rem-2;
+    padding-bottom: 2rem;
     font-family: $text-font;
     font-size: $text-standard;
     text-align: center;
@@ -55,10 +55,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: $rem-10;
+      max-width: 10rem;
       margin: auto;
       margin-top: 1rem;
-      padding: $rem-025;
+      padding: 0.25rem;
       font-family: $text-font;
       font-size: $text-standard;
       text-decoration: none;
@@ -70,8 +70,8 @@
     margin: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-right: $rem-025;
-    padding-left: $rem-025;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
     font-size: $text-standard;
     font-family: $text-font;
     text-align: center;
@@ -102,7 +102,7 @@
       height: 60vh;
       border: none;
       padding: 0;
-      margin-top: $rem-05;
+      margin-top: 0.5rem;
       top: -65px !important;
       position: relative;
     }

@@ -9,12 +9,12 @@
       font-size: $text-page-header;
       color: $primary;
       background-color: $backgroundTransparent;
-      padding: $rem-025;
+      padding: 0.25rem;
       border-radius: 1px;
 
       @include responsive(tabletSmall) {
         font-size: $text-section-header;
-        padding: $rem-015;
+        padding: 0.15rem;
       }
     }
   }
@@ -27,9 +27,9 @@
     #testimonials-title {
       text-align: center;
       font-size: $text-large;
-      padding-left: $rem-025;
-      padding-right: $rem-025;
-      padding-bottom: $rem-2;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 2rem;
     }
 
     .testimonials-testimonial {
@@ -51,7 +51,7 @@
       }
 
       .testimonials-info {
-        padding-top: $rem-05;
+        padding-top: 0.5rem;
         text-align: right;
       }
     }
