@@ -115,6 +115,19 @@ $header-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
 $header-image-height-desktop: 20rem;
 $header-image-height-mobile: 100vw;
 
+%textbox {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: $backgroundTransparent;
+  box-shadow: 0 4px 8px $backgroundTransparent;
+  color: $primary;
+  font-family: $heading-font;
+  font-size: $text-section-header;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
 // Erase Tyler
 $rem-015: 0.15rem;
 $rem-025: 0.25rem;

@@ -3,66 +3,59 @@
 #home {
   background-color: $page-color;
 
-  #home-header,
-  #home-headerMobile {
-    font-family: $heading-font;
-    font-size: $text-large;
-    font-weight: bold;
-    font-style: italic;
-    color: $primary;
-    background-color: $backgroundTransparent;
+  .home-header {
     padding: $rem-025;
     border-radius: 1px;
+    background-color: $backgroundTransparent;
+    color: $primary;
+    font-family: $heading-font;
+    font-size: $text-section-header;
+    font-weight: bold;
+    font-style: italic;
     text-align: center;
+
+    &.header1 {
+      @extend %textbox;
+    }
 
     @include responsive(tablet) {
       font-size: $text-section-header;
-      padding: $rem-015;
     }
   }
 
   #home-headerMobile {
     display: none;
+    border-top: 2px solid $primary;
     border-radius: 0;
     font-size: $text-large;
-    border-top: 2px solid $primary;
     @extend %background-gradient-dark;
   }
 
-  @include responsive(tablet) {
-    #home-header {
-      display: none;
-    }
-
-    #home-headerMobile {
-      display: block;
-    }
-  }
-
   #home-image {
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    padding-bottom: 5rem;
-    align-items: center;
     height: 55vh;
+    max-height: 80vw;
+    padding-bottom: 5rem;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     @include responsive(tablet) {
-      height: 85vw;
-      background-image: url("../../../../Media/Images/photoshoot/home2mobile.jpg") !important;
-      background-attachment: scroll;
+      background-position: center;
+      background-size: contain;
+      max-height: 100vw;
     }
   }
 
   #home-fuelContainer {
     padding: 8rem 0;
-    @extend %background-gradient-dark;
     color: $primary;
-    text-align: center;
     font-family: $text-font;
+    text-align: center;
+    @extend %background-gradient-dark;
 
     #home-fuelList {
       display: flex;
@@ -70,10 +63,10 @@
       flex-wrap: wrap;
 
       .home-fuel {
-        padding-bottom: $rem-075;
-        font-size: $text-large;
-        box-sizing: border-box;
         flex-basis: 25%;
+        padding-bottom: $rem-075;
+        box-sizing: border-box;
+        font-size: $text-large;
 
         @include responsive(tablet) {
           flex-basis: 50%;
@@ -101,25 +94,25 @@
 
     #home-serviceListHeading {
       margin: auto;
+      margin: 4rem 0rem;
+      color: $primary-contrast;
       font-family: $heading-font;
       font-size: $text-section-header;
-      text-align: center;
-      margin: 4rem 0rem;
       font-weight: bold;
-      color: $primary-contrast;
+      text-align: center;
     }
 
     #home-serviceList {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
+      flex-wrap: wrap;
       padding-bottom: $rem-05;
       padding-left: 16.5%;
 
       @include responsive(tablet) {
-        padding-left: unset;
         justify-content: center;
+        padding-left: unset;
       }
 
       @include responsive(widescreen) {
@@ -128,29 +121,29 @@
 
       .home-service {
         display: flex;
-        font-size: $text-large;
-        font-family: $text-font;
-        font-weight: bold;
-        box-sizing: border-box;
-        padding: 0.5rem;
         flex-basis: 50%;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        font-family: $text-font;
+        font-size: $text-large;
+        font-weight: bold;
 
         @include responsive(widescreen) {
           flex-basis: 50%;
         }
 
-        &#home-serviceLong {
-          flex-basis: 100% !important;
-        }
-
         @include responsive(tablet) {
+          justify-content: center;
           flex-basis: 100%;
           padding: 0.12$rem-5;
-          justify-content: center;
 
           #home-serviceLongItem {
             text-align: center;
           }
+        }
+
+        &#home-serviceLong {
+          flex-basis: 100% !important;
         }
 
         .home-serviceIcon {

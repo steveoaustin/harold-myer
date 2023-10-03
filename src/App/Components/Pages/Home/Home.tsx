@@ -64,12 +64,10 @@ class Home extends Component {
             content="Harold Myers Fuel: offering fuel oil delivery, air conditioning and water heater installation, and 24 hour emergency service to the Bucks County area."
           />
         </Helmet>
-        <div id="home-headerMobile">
-          Your affordable full service oil company
-        </div>
-
         <div id="home-image" style={{ backgroundImage: `url(${home})` }}>
-          <div id="home-header">Your affordable full service oil company</div>
+          <div className="home-header header1">
+            Your Affordable Full-Service Oil Company
+          </div>
         </div>
         <div id="home-fuelContainer">
           <div id="home-fuelList">
