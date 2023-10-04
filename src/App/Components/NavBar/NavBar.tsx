@@ -151,46 +151,6 @@ class NavBar extends Component {
             </SlideDown>
           </div>
         </div>
-        <div
-          id="navBar-stickyNavigation"
-          className={
-            this.state.showStickyNavBar
-              ? "navBar-stickyNavigationShown"
-              : "navBar-stickyNavigationHidden"
-          }
-        >
-          <NavLink exact={true} to="/" id="navBar-logoHomeLinkSticky">
-            <img
-              id="navBar-companyLogoSticky"
-              src={logo}
-              alt="Harold Myers Logo"
-            />
-            <span id="navBar-companyNameSticky">Harold Myers Inc.</span>
-            <div
-              id="navBar-stickyNavMobileMenu"
-              className="navBar-mobileNavMenu"
-              onClick={(e) => {
-                this.stopClickPropagation(e);
-                this.setState({
-                  showStickyMobileLinks: !this.state.showStickyMobileLinks
-                });
-              }}
-            >
-              <Icon className="navBar-mobileLinksMenu">menu</Icon>
-            </div>
-          </NavLink>
-          <SlideDown
-            className="navBar-linkSlidedown"
-            closed={
-              this.state.displayingStickyMobileMenu === undefined ||
-              (this.state.displayingStickyMobileMenu &&
-                !this.state.showStickyMobileLinks)
-            }
-            transitionOnAppear={true}
-          >
-            {this.navLinks(this.state.showStickyMobileLinks, false)}
-          </SlideDown>
-        </div>
       </div>
     );
   }
