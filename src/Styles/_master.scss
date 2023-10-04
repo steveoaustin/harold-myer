@@ -52,14 +52,14 @@ $widescreen: 1100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $header-image-height-mobile;
+  height: 100vw;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
 
   @include responsive(widescreen) {
-    height: $header-image-height-desktop;
+    height: 20rem;
     background-attachment: fixed;
   }
 }
@@ -103,20 +103,10 @@ $text-tiny: 0.75rem;
 
 // Typefaces
 $text-font: "Metrophobic";
-$link-font: "Roboto";
 $heading-font: "Lato";
-$company-name-font: "Lustria";
-
-// Text Style
-$header-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-  1px 1px 0 #fff;
-
-// Element Sizing
-$header-image-height-desktop: 20rem;
-$header-image-height-mobile: 100vw;
 
 %textbox {
-  padding: 10px;
+  padding: 1rem;
   border-radius: 4px;
   background-color: $backgroundTransparent;
   box-shadow: 0 4px 8px $backgroundTransparent;
@@ -124,6 +114,5 @@ $header-image-height-mobile: 100vw;
   font-family: $heading-font;
   font-size: $text-section-header;
   font-weight: bold;
-  font-style: italic;
   text-align: center;
 }

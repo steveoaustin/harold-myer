@@ -4,31 +4,7 @@
   background-color: $page-color;
 
   .home-header {
-    padding: 0.25rem;
-    border-radius: 1px;
-    background-color: $backgroundTransparent;
-    color: $primary;
-    font-family: $heading-font;
-    font-size: $text-section-header;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
-
-    &.header1 {
-      @extend %textbox;
-    }
-
-    @include responsive(tablet) {
-      font-size: $text-section-header;
-    }
-  }
-
-  #home-headerMobile {
-    display: none;
-    border-top: 2px solid $primary;
-    border-radius: 0;
-    font-size: $text-large;
-    @extend %background-gradient-dark;
+    @extend %textbox;
   }
 
   #home-image {
@@ -44,9 +20,9 @@
     background-repeat: no-repeat;
 
     @include responsive(tablet) {
+      max-height: 100vw;
       background-position: center;
       background-size: contain;
-      max-height: 100vw;
     }
   }
 

@@ -113,7 +113,7 @@ $sublistLink-height: 1.25rem;
         .navBar-link {
           display: inline-flex;
           text-decoration: none;
-          font-family: $link-font;
+          font-family: $text-font;
           color: $background-text;
           height: 1.25rem;
 
@@ -176,7 +176,7 @@ $sublistLink-height: 1.25rem;
               align-items: center;
               justify-content: center;
               text-decoration: none;
-              font-family: $link-font;
+              font-family: $text-font;
               font-size: $text-link;
               color: $background-text;
               width: 100%;
@@ -205,7 +205,7 @@ $sublistLink-height: 1.25rem;
     }
 
     #navBar-companyName {
-      font-family: $company-name-font;
+      font-family: $heading-font;
       font-size: $text-page-header;
       color: $company-name;
       text-align: center;
@@ -425,7 +425,7 @@ $sublistLink-height: 1.25rem;
     }
 
     #navBar-companyNameSticky {
-      font-family: $company-name-font;
+      font-family: $heading-font;
       font-size: $text-large;
       color: $company-name;
     }

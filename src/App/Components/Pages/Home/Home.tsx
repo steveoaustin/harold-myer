@@ -65,7 +65,7 @@ class Home extends Component {
           />
         </Helmet>
         <div id="home-image" style={{ backgroundImage: `url(${home})` }}>
-          <div className="home-header header1">
+          <div className="home-header">
             Your Affordable Full-Service Oil Company
           </div>
         </div>
