@@ -51,6 +51,15 @@ class Home extends Component {
       });
   }
 
+  americanizeDate(): string {
+    const date = new Date();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based, so we add 1
+    const day = String(date.getDate()).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${month}/${day}/${year}`;
+  }
+
   render() {
     return (
       <div id="home">
@@ -87,8 +96,7 @@ class Home extends Component {
             )}
           </div>
           <div id="home-fuelDate">
-            TO;DO: Replace with the thing{" "}
-            <span style={{ whiteSpace: "nowrap" }}>{this.state.asOfDate}</span>
+            Prices are up to date as of {this.americanizeDate()}
           </div>
         </div>
 
@@ -97,50 +105,21 @@ class Home extends Component {
             We proudly offer the following services:
           </div>
           <div id="home-serviceList">
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Fuel Oil
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Automatic
-              Delivery
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Service
-              Contracts
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>
-              Installation
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>On and
-              Off-Road Diesel
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Air
-              Conditioning
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Electric
-              Water Heaters
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Prepay
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Budget
-              Plans
-            </div>
-            <div className="home-service">
-              <Icon className="home-serviceIcon">chevron_right</Icon>Cap Price
-              Program
-            </div>
-            <div id="home-serviceLong" className="home-service">
+            <a className="home-service">Fuel Oil</a>
+            <a className="home-service">Automatic Delivery</a>
+            <a className="home-service">Service Contracts</a>
+            <a className="home-service">Installation</a>
+            <a className="home-service">On and Off-Road Diesel</a>
+            <a className="home-service">Air Conditioning</a>
+            <a className="home-service">Electric Water Heaters</a>
+            <a className="home-service">Prepay</a>
+            <a className="home-service">Budget Plans</a>
+            <a className="home-service">Cap Price Program</a>
+            <a id="home-serviceLong" className="home-service">
               <span id="home-serviceLongItem">
-                <Icon className="home-serviceIcon">chevron_right</Icon>
                 24 Hour Emergency Heater Service
               </span>
-            </div>
+            </a>
           </div>
         </div>
         <ServicesPanel />
