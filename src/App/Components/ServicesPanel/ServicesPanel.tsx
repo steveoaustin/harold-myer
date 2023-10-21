@@ -3,9 +3,9 @@ import "./ServicesPanel.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import airConditioning from "../../../Media/graphics/air-conditioning.png";
-import oilTruck from "../../../Media/graphics/fuel-oil-truck.png";
-import pipeWrench from "../../../Media/graphics/pipe-wrench.png";
+import fuelDroplet from "../../../Media/graphics/fuelDroplet.png";
+import installation from "../../../Media/graphics/installation.png";
+import snowflake from "../../../Media/graphics/snowflake.png";
 
 class ServicesPanel extends Component {
   render() {
@@ -17,7 +17,11 @@ class ServicesPanel extends Component {
           to="services/fuelOil"
           className="servicesPanel-service"
         >
-          <img className="servicesPanel-icon" src={oilTruck} alt="fuel oil" />
+          <img
+            className="servicesPanel-icon"
+            src={fuelDroplet}
+            alt="fuel oil"
+          />
           Fuel Oil
         </NavLink>
         <NavLink
@@ -27,7 +31,7 @@ class ServicesPanel extends Component {
         >
           <img
             className="servicesPanel-icon"
-            src={pipeWrench}
+            src={installation}
             alt="pipe-wrench"
           />
           Installation
@@ -39,7 +43,7 @@ class ServicesPanel extends Component {
         >
           <img
             className="servicesPanel-icon"
-            src={airConditioning}
+            src={snowflake}
             alt="air conditioning"
           />
           Air Conditioning

@@ -17,7 +17,7 @@
     color: $primary;
     font-family: $heading-font;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
   }
 
@@ -29,13 +29,16 @@
     flex-basis: 33%;
     color: $background-text;
     font-family: $text-font;
-    font-size: $text-large;
+    font-size: $text-section-header;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
 
     &:hover {
       text-decoration: underline;
+      .servicesPanel-icon {
+        scale: 1.1;
+      }
     }
 
     @include responsive(tablet) {
@@ -43,14 +46,10 @@
     }
 
     .servicesPanel-icon {
-      height: 5rem;
+      height: 10rem;
       width: auto;
       margin-bottom: 1.5rem;
       transition: 0.2s ease-in-out all;
-
-      &:hover {
-        scale: 1.1;
-      }
     }
   }
 }
