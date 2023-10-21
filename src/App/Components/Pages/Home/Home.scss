@@ -59,8 +59,13 @@
       }
     }
 
-    #home-fuelDate {
+    #home-fuelInfo {
       padding-top: 4rem;
+      font-size: $text-large;
+    }
+
+    #home-fuelDate {
+      padding-top: 1rem;
       font-size: $text-standard;
     }
   }

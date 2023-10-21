@@ -16,6 +16,7 @@ class Home extends Component {
       fuelPrice: string | null;
       fuelInfo: string | null;
     }[];
+    fuelInfoText: string;
     asOfDate: string;
     serviceContract: any;
     prepayFile: any;
@@ -28,6 +29,7 @@ class Home extends Component {
     this.state = {
       fuelList: [],
       asOfDate: "",
+      fuelInfoText: "",
       serviceContract: "",
       prepayFile: ""
     };
@@ -38,7 +40,7 @@ class Home extends Component {
     });
     this.client
       .fetch(
-        `*[_type == "fuelList"]{currentOptions[]{fuelName, fuelPrice, fuelInfo}, asOfDate}[0]`
+        `*[_type == "fuelList"]{currentOptions[]{fuelName, fuelPrice, fuelInfo}, fuelInfoText}[0]`
       )
       .then((result: any) => {
         const list: {
@@ -46,6 +48,7 @@ class Home extends Component {
           fuelPrice: string | null;
           fuelInfo: string | null;
         }[] = [];
+        console.log(result);
         result.currentOptions.map((fuel: any) => {
           // hide prepay link when not in fuel list
           if (fuel.fuelName.toLowerCase().includes("prepay")) {
@@ -58,7 +61,7 @@ class Home extends Component {
           });
           return null;
         });
-        this.setState({ fuelList: list, asOfDate: result.asOfDate });
+        this.setState({ fuelList: list, fuelInfoText: result.fuelInfoText });
       });
     this.client
       .fetch(
@@ -118,6 +121,9 @@ class Home extends Component {
                 )
             )}
           </div>
+          {this.state.fuelInfoText && (
+            <div id="home-fuelInfo">{this.state.fuelInfoText}</div>
+          )}
           <div id="home-fuelDate">
             Prices are up to date as of {this.americanizeDate()}
           </div>
