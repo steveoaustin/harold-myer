@@ -2,8 +2,7 @@ import "./Home.scss";
 
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-
-import { Icon } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 
 import home from "../../../../Media/Images/Compressed/home.jpg";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
@@ -18,12 +17,20 @@ class Home extends Component {
       fuelInfo: string | null;
     }[];
     asOfDate: string;
+    serviceContract: any;
+    prepayFile: any;
+    showPrepay?: boolean;
   };
   client: any;
 
   constructor(props: any) {
     super(props);
-    this.state = { fuelList: [], asOfDate: "" };
+    this.state = {
+      fuelList: [],
+      asOfDate: "",
+      serviceContract: "",
+      prepayFile: ""
+    };
     this.client = sanityClient({
       projectId: "ts7lblsw",
       dataset: "cms-data",
@@ -40,6 +47,10 @@ class Home extends Component {
           fuelInfo: string | null;
         }[] = [];
         result.currentOptions.map((fuel: any) => {
+          // hide prepay link when not in fuel list
+          if (fuel.fuelName.toLowerCase().includes("prepay")) {
+            this.setState({ showPrepay: true });
+          }
           list.push({
             fuelType: fuel.fuelName,
             fuelPrice: fuel.fuelPrice,
@@ -48,6 +59,18 @@ class Home extends Component {
           return null;
         });
         this.setState({ fuelList: list, asOfDate: result.asOfDate });
+      });
+    this.client
+      .fetch(
+        `*[_type == "serviceContract"]{"fileUrl" : contract.asset->url}[0]`
+      )
+      .then((result: any) => {
+        this.setState({ serviceContract: result.fileUrl });
+      });
+    this.client
+      .fetch(`*[_type == "prepayForm"]{"fileUrl" : form.asset->url}[0]`)
+      .then((result: any) => {
+        this.setState({ prepayFile: result.fileUrl });
       });
   }
 
@@ -105,21 +128,68 @@ class Home extends Component {
             We proudly offer the following services:
           </div>
           <div id="home-serviceList">
-            <a className="home-service">Fuel Oil</a>
-            <a className="home-service">Automatic Delivery</a>
-            <a className="home-service">Service Contracts</a>
-            <a className="home-service">Installation</a>
-            <a className="home-service">On and Off-Road Diesel</a>
-            <a className="home-service">Air Conditioning</a>
-            <a className="home-service">Electric Water Heaters</a>
-            <a className="home-service">Prepay</a>
-            <a className="home-service">Budget Plans</a>
-            <a className="home-service">Cap Price Program</a>
-            <a id="home-serviceLong" className="home-service">
+            <NavLink exact to="/services/fuelOil" className="home-service">
+              Fuel Oil
+            </NavLink>
+            <NavLink exact to="/services/fuelOil" className="home-service">
+              Automatic Delivery
+            </NavLink>
+            <a
+              href={this.state.serviceContract}
+              download="Service_Contract"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-service"
+            >
+              Service Contracts
+            </a>
+            <NavLink exact to="/services/installation" className="home-service">
+              Installation
+            </NavLink>
+            <NavLink exact to="/services/fuelOil" className="home-service">
+              On and Off-Road Diesel
+            </NavLink>
+            <NavLink
+              exact
+              to="/services/airConditioning"
+              className="home-service"
+            >
+              Air Conditioning
+            </NavLink>
+            <NavLink exact to="/services/installation" className="home-service">
+              Electric Water Heaters
+            </NavLink>
+            {this.state.showPrepay ? (
+              <a
+                href={this.state.prepayFile}
+                download="Prepay_Form"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-service"
+              >
+                Prepay
+              </a>
+            ) : (
+              <NavLink exact to="/payment" className="home-service">
+                Prepay
+              </NavLink>
+            )}
+            <NavLink exact to="/payment" className="home-service">
+              Budget Plans
+            </NavLink>
+            <NavLink exact to="/payment" className="home-service">
+              Cap Price Program
+            </NavLink>
+            <NavLink
+              exact
+              to="/services/"
+              id="home-serviceLong"
+              className="home-service"
+            >
               <span id="home-serviceLongItem">
                 24 Hour Emergency Heater Service
               </span>
-            </a>
+            </NavLink>
           </div>
         </div>
         <ServicesPanel />
