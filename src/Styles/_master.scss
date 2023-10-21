@@ -59,7 +59,7 @@ $widescreen: 1100px;
   background-attachment: scroll;
 
   @include responsive(widescreen) {
-    height: 20rem;
+    height: 40rem;
     background-attachment: fixed;
   }
 }
@@ -72,7 +72,7 @@ $widescreen: 1100px;
 
 // Color Palette
 $background: #020b21;
-$backgroundTransparent: #061231a1;
+$backgroundTransparent: #061231c0;
 $background-text: white;
 $background-secondary: #d34927;
 $background-secondary-text: #020b21;

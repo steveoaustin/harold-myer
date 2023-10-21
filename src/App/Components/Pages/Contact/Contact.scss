@@ -7,22 +7,12 @@
     @include parallax;
 
     #contact-header {
-      font-family: $heading-font;
-      font-size: $text-page-header;
-      color: $primary;
-      background-color: $backgroundTransparent;
-      padding: 0.25rem;
-      border-radius: 1px;
-
-      @include responsive(tabletSmall) {
-        font-size: $text-section-header;
-        padding: 0.15rem;
-      }
+      @extend %textbox;
     }
   }
 
   #contact-info {
-    padding-top: 1rem;
+    padding: 4rem 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -31,34 +21,34 @@
     #contact-infoHeader {
       font-family: $heading-font;
       font-size: $text-section-header;
-      padding-bottom: 0.5rem;
+      padding-bottom: 2rem;
       text-align: center;
+      font-weight: bold;
     }
 
     .contact-infoItem {
       flex-basis: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding: 0.5rem 0.75rem;
       font-family: $text-font;
-      font-size: $text-standard;
+      font-size: $text-large;
+
       .contact-infoIcon {
-        font-size: 1rem;
+        font-size: $text-large;
         color: $primary;
         padding-right: 0.25rem;
       }
     }
+  }
 
-    #contact-map {
-      width: 100vw;
-      height: 50vh;
-      border: none;
-      padding: 0;
-      margin-top: 0.5rem;
-    }
+  #contact-map {
+    width: 100vw;
+    height: 50vh;
+    border: none;
+    padding: 0;
+    margin-top: 0.5rem;
   }
 }

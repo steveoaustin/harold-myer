@@ -5,31 +5,19 @@
     @include parallax;
 
     #testimonials-header {
-      font-family: $heading-font;
-      font-size: $text-page-header;
-      color: $primary;
-      background-color: $backgroundTransparent;
-      padding: 0.25rem;
-      border-radius: 1px;
-
-      @include responsive(tabletSmall) {
-        font-size: $text-section-header;
-        padding: 0.15rem;
-      }
+      @extend %textbox;
     }
   }
 
   #testimonials-content {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 4rem 1rem;
     font-family: $text-font;
 
     #testimonials-title {
       text-align: center;
-      font-size: $text-large;
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
-      padding-bottom: 2rem;
+      font-size: $text-section-header;
+      font-weight: bold;
+      padding-bottom: 4rem;
     }
 
     .testimonials-testimonial {
@@ -51,7 +39,7 @@
       }
 
       .testimonials-info {
-        padding-top: 0.5rem;
+        padding-top: 1rem;
         text-align: right;
       }
     }

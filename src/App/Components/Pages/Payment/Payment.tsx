@@ -1,12 +1,14 @@
-import React, { Component } from "react";
-import prepay from "../../../../Media/graphics/prepay.svg";
-import budgetPlan from "../../../../Media/graphics/budgetPlan.svg";
-//import capPrice from "../../../../Media/graphics/capPrice.svg";
-import payment from "../../../../Media/Images/Compressed/payment.jpg";
-
 import "./Payment.scss";
-import Separator from "../../Separator/Separator";
+
+import React, { Component } from "react";
 import Helmet from "react-helmet";
+
+import budgetPlan from "../../../../Media/graphics/budgetPlans.png";
+import prepay from "../../../../Media/graphics/prepay.png";
+import payment from "../../../../Media/Images/Compressed/payment.jpg";
+import Separator from "../../Separator/Separator";
+
+//import capPrice from "../../../../Media/graphics/capPrice.svg";
 
 const sanityClient = require("@sanity/client");
 

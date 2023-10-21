@@ -4,7 +4,7 @@ $topNav-height: 3rem;
 $stickyNav-height: 2rem;
 $link-height: 1.5rem;
 $mobileLink-height: 1.25rem;
-$sublistLink-height: 1.25rem;
+$sublistLink-height: 2.5rem;
 
 .navBar-linkSlidedown,
 .navBar-servicesSlidedown {
@@ -19,6 +19,7 @@ $sublistLink-height: 1.25rem;
   align-items: center;
   font-family: $text-font;
   font-size: $text-small;
+  font-weight: bold;
 
   #navBar-facebookLink,
   #navBar-facebookLogo {
@@ -159,7 +160,7 @@ $sublistLink-height: 1.25rem;
 
         .navBar-serviceLinks {
           margin: 0;
-          padding: 0;
+          padding: 0.5rem;
           width: 6rem;
           @extend %background-gradient-dark;
           text-align: center;
@@ -229,9 +230,13 @@ $sublistLink-height: 1.25rem;
       }
     }
 
+    .navBar-mobileLinksMenu {
+      font-size: 3rem;
+    }
+
     @include responsive(mobile) {
       .navBar-mobileLinksMenu {
-        font-size: 1.25rem;
+        font-size: 2rem;
       }
       #navBar-companyName {
         font-size: 0.85rem;
@@ -258,6 +263,7 @@ $sublistLink-height: 1.25rem;
       flex-wrap: wrap;
 
       .navBar-linkContainer {
+        padding: 0.75rem;
         width: 100%;
         min-height: $mobileLink-height !important;
         display: flex;
@@ -394,7 +400,7 @@ $sublistLink-height: 1.25rem;
     justify-content: flex-start;
 
     .navBar-mobileLinksMenu {
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     #navBar-companyNameSticky {
@@ -493,6 +499,7 @@ $sublistLink-height: 1.25rem;
               width: 100%;
 
               .navBar-sublistLinkContainer {
+                padding: 0.5rem;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -554,6 +561,7 @@ $sublistLink-height: 1.25rem;
             background-color: $secondary !important;
 
             .navBar-sublistLinkContainer {
+              padding: 0.5rem;
               .navBar-sublistLink-active {
                 .navBar-linkText {
                   color: $primary;

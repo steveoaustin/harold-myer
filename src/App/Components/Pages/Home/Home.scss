@@ -21,8 +21,8 @@
 
     @include responsive(tablet) {
       max-height: 100vw;
-      background-position: center;
-      background-size: contain;
+      // background-position: center;
+      // background-size: contain;
     }
   }
 
@@ -40,11 +40,11 @@
 
       .home-fuel {
         flex-basis: 25%;
-        padding-bottom: 0.75rem;
         box-sizing: border-box;
         font-size: $text-large;
 
         @include responsive(tablet) {
+          padding-bottom: 4rem;
           flex-basis: 50%;
         }
 

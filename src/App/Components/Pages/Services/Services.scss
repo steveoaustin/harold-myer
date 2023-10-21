@@ -7,26 +7,16 @@
     @include parallax;
 
     #services-header {
-      font-family: $heading-font;
-      font-size: $text-page-header;
-      color: $primary;
-      background-color: $backgroundTransparent;
-      padding: 0.25rem;
-      border-radius: 1px;
-
-      @include responsive(tabletSmall) {
-        font-size: $text-section-header;
-        padding: 0.15rem;
-      }
+      @extend %textbox;
     }
   }
 
   #services-overview {
     margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     font-family: $text-font;
-    font-size: $text-standard;
+    font-size: $text-large;
     text-align: center;
 
     @include responsive(desktop) {
@@ -50,30 +40,27 @@
     }
 
     #services-serviceContractDownload {
-      border: 2px solid $primary;
-      border-radius: 1px;
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 10rem;
+      max-width: 12rem;
       margin: auto;
-      margin-top: 1rem;
-      padding: 0.25rem;
-      font-family: $text-font;
-      font-size: $text-standard;
-      text-decoration: none;
+      margin-top: 4rem;
+      padding: 0.5rem 0.25rem;
+      border: 2px solid $primary;
+      border-radius: 5px;
       color: $primary;
+      font-family: $text-font;
+      font-size: $text-large;
+      text-decoration: none;
     }
   }
 
   #services-mapOverview {
     margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
-    font-size: $text-standard;
+    padding: 4rem 0.5rem;
     font-family: $text-font;
+    font-size: $text-large;
     text-align: center;
 
     @include responsive(desktopThin) {
@@ -91,20 +78,33 @@
     @include responsive(mobile) {
       width: 95% !important;
     }
+
+    .services-towns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 4rem;
+
+      .services-town {
+        padding: 1rem 1rem;
+        font-weight: bold;
+      }
+    }
   }
 
   #services-mapContainer {
-    overflow: hidden;
     height: 50vh;
+    overflow: hidden;
 
     #services-map {
-      width: 100%;
-      height: 60vh;
-      border: none;
-      padding: 0;
-      margin-top: 0.5rem;
-      top: -65px !important;
       position: relative;
+      top: -65px !important;
+      height: 60vh;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0;
+      border: none;
     }
   }
 }

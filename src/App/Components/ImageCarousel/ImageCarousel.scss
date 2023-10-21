@@ -26,13 +26,13 @@ $arrowSize: 1.5rem;
   background-repeat: no-repeat;
 
   @include responsive(tablet) {
-    height: 70vw;
+    height: 80vw;
   }
   @include responsive(desktopThin) {
     height: 60vw;
   }
   @include responsive(widescreen) {
-    height: 5rem;
+    height: 70vh;
   }
 
   #carousel-image {

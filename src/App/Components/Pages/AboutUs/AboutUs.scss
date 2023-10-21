@@ -9,10 +9,11 @@
   #about-title {
     font-family: $heading-font;
     font-size: $text-page-header;
+    font-weight: bold;
     color: $primary;
     text-align: center;
     flex-basis: 100%;
-    padding-top: 1rem;
+    padding: 4rem 0.5rem;
 
     @include responsive(tabletSmall) {
       font-size: $text-section-header;
@@ -22,10 +23,9 @@
   }
 
   #about-text {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     font-family: $text-font;
-    font-size: $text-standard;
+    font-size: $text-large;
     text-align: center;
 
     @include responsive(desktop) {
