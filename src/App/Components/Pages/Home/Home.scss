@@ -14,7 +14,6 @@
     flex-direction: column;
     height: 55vh;
     max-height: 80vw;
-    padding-bottom: 5rem;
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,8 +43,8 @@
         font-size: $text-large;
 
         @include responsive(tablet) {
-          padding-bottom: 4rem;
           flex-basis: 50%;
+          padding-bottom: 4rem;
         }
 
         @include responsive(mobile) {
@@ -61,7 +60,25 @@
 
     #home-fuelInfo {
       padding-top: 4rem;
+      padding-bottom: 2rem;
       font-size: $text-large;
+    }
+
+    #home-fuelInfo,
+    #home-fuelDate {
+      margin: auto;
+
+      @include responsive(tablet) {
+        width: 80%;
+      }
+
+      @include responsive(tabletSmall) {
+        width: 90%;
+      }
+
+      @include responsive(mobile) {
+        width: 95% !important;
+      }
     }
 
     #home-fuelDate {
@@ -76,6 +93,7 @@
     #home-serviceListHeading {
       margin: auto;
       margin: 4rem 0rem;
+      padding: 0rem 2rem;
       color: $primary-contrast;
       font-family: $heading-font;
       font-size: $text-section-header;
@@ -93,7 +111,17 @@
 
       @include responsive(tablet) {
         justify-content: center;
+        width: 80%;
+        margin: auto;
         padding-left: unset;
+      }
+
+      @include responsive(tabletSmall) {
+        width: 90%;
+      }
+
+      @include responsive(mobile) {
+        width: 95% !important;
       }
 
       @include responsive(widescreen) {
@@ -105,16 +133,12 @@
         flex-basis: 50%;
         padding: 0.5rem;
         box-sizing: border-box;
+        transition: 0.25s linear all;
+        color: black;
         font-family: $text-font;
         font-size: $text-large;
         font-weight: bold;
         text-decoration: underline;
-        color: black;
-        transition: 0.25s linear all;
-
-        &:hover {
-          color: $primary;
-        }
 
         @include responsive(widescreen) {
           flex-basis: 50%;
@@ -128,6 +152,10 @@
           #home-serviceLongItem {
             text-align: center;
           }
+        }
+
+        &:hover {
+          color: $primary;
         }
 
         &#home-serviceLong {

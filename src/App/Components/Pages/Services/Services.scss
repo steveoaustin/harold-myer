@@ -57,27 +57,7 @@
   }
 
   #services-mapOverview {
-    margin: auto;
-    padding: 4rem 0.5rem;
-    font-family: $text-font;
-    font-size: $text-large;
-    text-align: center;
-
-    @include responsive(desktopThin) {
-      width: 70%;
-    }
-
-    @include responsive(tablet) {
-      width: 80%;
-    }
-
-    @include responsive(tabletSmall) {
-      width: 90%;
-    }
-
-    @include responsive(mobile) {
-      width: 95% !important;
-    }
+    @extend %paragraph-text;
 
     .services-towns {
       display: flex;

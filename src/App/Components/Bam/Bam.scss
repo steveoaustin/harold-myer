@@ -1,12 +1,7 @@
 @import "../../../Styles/master";
 
 .bam {
-  padding-right: 0.5rem;
   margin-left: auto;
-
-  @include responsive(tabletSmall) {
-    margin-left: 0;
-  }
 
   .bam-logo {
     width: auto;

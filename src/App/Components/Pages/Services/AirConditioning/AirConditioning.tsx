@@ -26,21 +26,19 @@ class AirConditioning extends Component {
         </div>
         <div id="airConditioning-about">
           Don't let the heat of summer get you down! We offer complete air
-          conditioning service and installations. All of our technicians have
-          all of the training and experience needed to install a quality, high
-          efficiency air conditioning system.
+          conditioning service and installations.
+          <br />
+          <br />
+          All of our technicians have all of the training and experience needed
+          to install a quality, high efficiency air conditioning system.
         </div>
 
         <Separator />
 
         <div id="airConditioning-mapOverview">
           This is our general service area.
-          {
-            <>
-              <br />
-              <br />
-            </>
-          }
+          <br />
+          <br />
           Please contact us if you are close by to see if we can accomodate your
           needs.
           <div className="services-towns">

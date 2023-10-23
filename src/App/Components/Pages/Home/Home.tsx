@@ -48,7 +48,6 @@ class Home extends Component {
           fuelPrice: string | null;
           fuelInfo: string | null;
         }[] = [];
-        console.log(result);
         result.currentOptions.map((fuel: any) => {
           // hide prepay link when not in fuel list
           if (fuel.fuelName.toLowerCase().includes("prepay")) {

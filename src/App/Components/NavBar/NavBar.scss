@@ -12,19 +12,37 @@ $sublistLink-height: 2.5rem;
 }
 
 #navBar-infoBar {
+  display: flex;
+  align-items: center;
   min-height: 1.5rem;
   background-color: $background-secondary;
   color: $background-secondary-text;
-  display: flex;
-  align-items: center;
   font-family: $text-font;
   font-size: $text-small;
   font-weight: bold;
 
+  @include responsive(mobile) {
+    #navBar-address {
+      padding-top: 0 !important;
+    }
+  }
+
+  @include responsive(tabletSmall) {
+    #navBar-addressText {
+      display: none;
+    }
+  }
+
+  @include responsive(tablet) {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: $text-tiny;
+  }
+
   #navBar-facebookLink,
   #navBar-facebookLogo {
-    width: 1rem;
     height: 1rem;
+    width: 1rem;
   }
 
   #navBar-facebookLink,
@@ -52,41 +70,23 @@ $sublistLink-height: 2.5rem;
   }
 
   #navBar-address {
+    margin-left: auto;
     padding: 0.1rem;
     text-align: center;
-    margin-left: auto;
 
     .navBar-locationLink {
       display: flex;
       align-items: center;
-      text-decoration: none;
       color: $background-secondary-text;
+      text-decoration: none;
       cursor: pointer;
     }
   }
 
   .navBar-infoIcon {
+    margin-right: 0.25rem;
     color: $background-secondary-text;
     font-size: 1rem;
-    margin-right: 0.25rem;
-  }
-
-  @include responsive(mobile) {
-    #navBar-address {
-      padding-top: 0 !important;
-    }
-  }
-
-  @include responsive(tabletSmall) {
-    #navBar-addressText {
-      display: none;
-    }
-  }
-
-  @include responsive(tablet) {
-    font-size: $text-tiny;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
@@ -108,15 +108,15 @@ $sublistLink-height: 2.5rem;
       padding: 0;
 
       .navBar-linkContainer {
-        list-style: none;
         min-height: $link-height;
+        list-style: none;
 
         .navBar-link {
           display: inline-flex;
-          text-decoration: none;
-          font-family: $text-font;
-          color: $background-text;
           height: 1.25rem;
+          color: $background-text;
+          font-family: $text-font;
+          text-decoration: none;
 
           &:hover {
             color: $primary;
@@ -125,7 +125,9 @@ $sublistLink-height: 2.5rem;
           .navBar-linkText {
             display: inline-flex;
             align-items: center;
-            height: 75%;
+            // height: 75%;
+            font-weight: bold;
+            text-decoration: none !important;
           }
 
           &.navBar-link-active {
@@ -140,7 +142,7 @@ $sublistLink-height: 2.5rem;
         }
 
         .navBar-sublistLink {
-          font-size: $text-tiny !important;
+          font-size: $text-link !important;
 
           &:hover {
             .navBar-linkText {
@@ -152,18 +154,23 @@ $sublistLink-height: 2.5rem;
         .navBar-expandServicesIconContainer {
           display: flex;
           align-items: center;
-          margin-right: -1rem;
+          margin-right: -2rem;
           .navBar-expandServicesIcon {
-            font-size: 1rem;
+            font-size: 2rem;
           }
         }
 
         .navBar-serviceLinks {
           margin: 0;
           padding: 0.5rem;
-          width: 6rem;
-          @extend %background-gradient-dark;
           text-align: center;
+
+          @include responsive(desktop-thin) {
+            width: 10rem;
+            margin-top: 0.1rem;
+            margin-left: -2.5rem;
+            background-color: $background;
+          }
 
           .navBar-sublistLinkContainer {
             display: flex;
@@ -176,12 +183,13 @@ $sublistLink-height: 2.5rem;
               display: flex;
               align-items: center;
               justify-content: center;
-              text-decoration: none;
-              font-family: $text-font;
-              font-size: $text-link;
-              color: $background-text;
-              width: 100%;
               height: 100%;
+              width: 100%;
+              color: $background-text;
+              font-family: $text-font;
+              font-size: 1rem; // $text-link;
+              font-weight: bold;
+              text-decoration: none;
             }
           }
         }
@@ -191,69 +199,6 @@ $sublistLink-height: 2.5rem;
 }
 
 #navBar-navigation {
-  #navBar-logoHomeLink {
-    text-decoration: none;
-    min-height: $topNav-height;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-
-    #navBar-companyLogo {
-      width: 4rem;
-      height: 4rem;
-    }
-
-    #navBar-companyName {
-      font-family: $heading-font;
-      font-size: $text-page-header;
-      color: $company-name;
-      text-align: center;
-
-      #navBar-trustedSince {
-        font-family: $text-font;
-        font-size: $text-standard;
-        font-style: italic;
-        text-align: center;
-      }
-    }
-
-    @include responsive(tabletSmall) {
-      #navBar-companyName {
-        font-size: 1rem;
-        margin-right: 1rem;
-
-        #navBar-trustedSince {
-          font-size: $text-small;
-        }
-      }
-    }
-
-    .navBar-mobileLinksMenu {
-      font-size: 3rem;
-    }
-
-    @include responsive(mobile) {
-      .navBar-mobileLinksMenu {
-        font-size: 2rem;
-      }
-      #navBar-companyName {
-        font-size: 0.85rem;
-        margin-right: 1rem;
-
-        #navBar-trustedSince {
-          font-size: $text-tiny;
-        }
-      }
-
-      #navBar-companyLogo {
-        width: 2rem;
-        height: 2rem;
-      }
-    }
-  }
-
   @include responsive(tablet) {
     #navBar-topNavMobileMenu {
       display: flex;
@@ -263,21 +208,21 @@ $sublistLink-height: 2.5rem;
       flex-wrap: wrap;
 
       .navBar-linkContainer {
-        padding: 0.75rem;
-        width: 100%;
-        min-height: $mobileLink-height !important;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
+        min-height: $mobileLink-height !important;
+        width: 100%;
+        padding: 0.75rem;
         border-top: 1.5px solid $background-text;
 
         .navBar-link {
-          width: 100%;
-          height: 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
+          height: 1.25rem;
+          width: 100%;
         }
 
         .navBar-servicesSlidedown {
@@ -289,10 +234,10 @@ $sublistLink-height: 2.5rem;
             width: 100%;
 
             .navBar-sublistLinkContainer {
-              width: 100%;
               display: flex;
               align-items: center;
               justify-content: center;
+              width: 100%;
 
               .navBar-sublistLink-active {
                 color: $primary !important;
@@ -303,6 +248,56 @@ $sublistLink-height: 2.5rem;
       }
     }
   }
+  #navBar-logoHomeLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $topNav-height;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-decoration: none;
+
+    @include responsive(tabletSmall) {
+      #navBar-companyName {
+        margin-right: 1rem;
+        font-size: 1.5rem !important;
+
+        #navBar-trustedSince {
+          font-size: $text-standard;
+        }
+      }
+    }
+
+    @include responsive(mobile) {
+      #navBar-companyLogo {
+        height: 3rem;
+        width: auto;
+      }
+    }
+
+    #navBar-companyLogo {
+      height: 4rem;
+      width: auto;
+    }
+
+    #navBar-companyName {
+      color: $company-name;
+      font-family: $heading-font;
+      font-size: $text-page-header;
+      text-align: center;
+
+      #navBar-trustedSince {
+        font-family: $text-font;
+        font-size: $text-standard;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+
+    .navBar-mobileLinksMenu {
+      font-size: 3rem;
+    }
+  }
 
   .navBar-links {
     display: flex;
@@ -310,16 +305,12 @@ $sublistLink-height: 2.5rem;
     justify-content: center;
     width: 100%;
 
-    .navBar-link {
-      font-size: $text-link;
-    }
-
     @include responsive(desktopThin) {
       align-items: center;
 
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: 0.5rem;
+          padding-left: 1rem;
         }
 
         .navBar-link-active {
@@ -333,8 +324,8 @@ $sublistLink-height: 2.5rem;
         }
 
         .navBar-serviceLinks {
+          background-color: $background !important;
           z-index: 1;
-          background-color: $secondary !important;
 
           .navBar-sublistLinkContainer {
             .navBar-sublistLink-active {
@@ -343,8 +334,8 @@ $sublistLink-height: 2.5rem;
               }
             }
             .navBar-linkText {
-              font-size: $text-linkSmall;
               color: $secondary-contrast;
+              font-size: $text-linkSmall;
             }
 
             &:not(:first-child) {
@@ -370,7 +361,7 @@ $sublistLink-height: 2.5rem;
     @include responsive(desktop) {
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: 1.25rem;
+          padding-left: 2rem;
         }
       }
     }
@@ -378,23 +369,27 @@ $sublistLink-height: 2.5rem;
     @include responsive(widescreen) {
       .navBar-linkContainer {
         &:not(:first-child) {
-          padding-left: 2rem;
+          padding-left: 4rem;
         }
       }
+    }
+
+    .navBar-link {
+      font-size: $text-link;
     }
   }
 }
 
 #navBar-stickyNavigation {
-  height: $stickyNav-height;
-  width: 100%;
-  z-index: 1;
-  position: fixed;
-  transition: top 0.3s linear;
-  top: -$stickyNav-height - 0.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: -$stickyNav-height - 0.1rem;
+  height: $stickyNav-height;
+  width: 100%;
+  transition: top 0.3s linear;
+  z-index: 1;
 
   @include responsive(mobileSmall) {
     justify-content: flex-start;
@@ -406,41 +401,6 @@ $sublistLink-height: 2.5rem;
     #navBar-companyNameSticky {
       margin-right: 1rem;
       font-size: $text-standard;
-    }
-  }
-
-  .navBar-expandServicesIconContainer {
-    display: none !important;
-  }
-
-  &.navBar-stickyNavigationShown {
-    top: 0;
-  }
-
-  #navBar-logoHomeLinkSticky {
-    text-decoration: none;
-    height: $stickyNav-height;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    #navBar-companyLogoSticky {
-      width: 1.75rem;
-      height: 1.75rem;
-      padding: 0.125rem;
-    }
-
-    #navBar-companyNameSticky {
-      font-family: $heading-font;
-      font-size: $text-large;
-      color: $company-name;
-    }
-
-    @include responsive(mobile) {
-      #navBar-companyNameSticky {
-        font-size: 0.85rem;
-        margin-right: 1rem;
-      }
     }
   }
 
@@ -473,21 +433,21 @@ $sublistLink-height: 2.5rem;
         }
 
         .navBar-linkContainer {
-          padding: 0;
-          margin: 0;
-          width: 100%;
-          min-height: $mobileLink-height !important;
           display: flex;
-          flex-wrap: wrap;
           align-items: center;
           justify-content: center;
+          flex-wrap: wrap;
+          min-height: $mobileLink-height !important;
+          width: 100%;
+          margin: 0;
+          padding: 0;
           border-top: 1.5px solid $background-text;
 
           .navBar-link {
-            width: 100%;
-            height: $mobileLink-height;
             align-items: center;
             justify-content: center;
+            height: $mobileLink-height;
+            width: 100%;
           }
 
           .navBar-servicesSlidedown {
@@ -499,16 +459,51 @@ $sublistLink-height: 2.5rem;
               width: 100%;
 
               .navBar-sublistLinkContainer {
-                padding: 0.5rem;
-                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
+                padding: 0.5rem;
               }
             }
           }
         }
       }
+    }
+  }
+
+  .navBar-expandServicesIconContainer {
+    display: none !important;
+  }
+
+  &.navBar-stickyNavigationShown {
+    top: 0;
+  }
+
+  #navBar-logoHomeLinkSticky {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: $stickyNav-height;
+    text-decoration: none;
+
+    @include responsive(mobile) {
+      #navBar-companyNameSticky {
+        margin-right: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    #navBar-companyLogoSticky {
+      height: 1.75rem;
+      width: 1.75rem;
+      padding: 0.125rem;
+    }
+
+    #navBar-companyNameSticky {
+      color: $company-name;
+      font-family: $heading-font;
+      font-size: $text-large;
     }
   }
 
@@ -518,28 +513,19 @@ $sublistLink-height: 2.5rem;
     justify-content: center;
     bottom: 0;
 
-    .navBar-linkContainer {
-      display: block;
-
-      .navBar-link {
-        display: flex;
-        align-items: center;
-      }
-    }
-
     @include responsive(stickyNav-linkCutoff-links) {
       min-height: $stickyNav-height !important;
 
       .navBar-linkContainer {
+        min-height: $stickyNav-height;
         padding-left: 0.65rem;
         z-index: 1 !important;
-        min-height: $stickyNav-height;
 
         .navBar-link {
-          font-size: $text-linkSmall;
           display: flex;
           align-items: center;
           min-height: $stickyNav-height;
+          font-size: $text-linkSmall;
 
           .navBar-linkText {
             min-height: $link-height;
@@ -568,8 +554,8 @@ $sublistLink-height: 2.5rem;
                 }
               }
               .navBar-linkText {
-                font-size: $text-linkSmall;
                 color: $secondary-contrast;
+                font-size: $text-linkSmall;
               }
 
               &:not(:first-child) {
@@ -606,6 +592,15 @@ $sublistLink-height: 2.5rem;
         .navBar-link {
           font-size: $text-link;
         }
+      }
+    }
+
+    .navBar-linkContainer {
+      display: block;
+
+      .navBar-link {
+        display: flex;
+        align-items: center;
       }
     }
   }

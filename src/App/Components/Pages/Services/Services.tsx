@@ -48,17 +48,16 @@ class Services extends Component {
         </div>
         <div id="services-overview">
           Harold Myers, Inc. provides 24-hour emergency heater service to all of
-          our fuel oil customers. We also repair air conditioners. Our full time
-          highly skilled technicians provide all of our service work. Our trucks
-          and warehouse are stocked with a complete line of parts to fix all
-          makes and models of oil fired heating equipment. Harold Myers, Inc.
-          does heater, oil tank and air conditioner installations too.
-          {
-            <>
-              <br />
-              <br />
-            </>
-          }
+          our fuel oil customers. We also repair air conditioners.
+          <br />
+          <br />
+          Our full time highly skilled technicians provide all of our service
+          work. Our trucks and warehouse are stocked with a complete line of
+          parts to fix all makes and models of oil fired heating equipment.
+          Harold Myers, Inc. does heater, oil tank and air conditioner
+          installations too.
+          <br />
+          <br />
           We are here to meet all of your home comfort needs!
           {this.state.serviceContract !== undefined && (
             <a

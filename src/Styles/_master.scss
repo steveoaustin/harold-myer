@@ -92,27 +92,57 @@ $company-name: #d34927;
 }
 
 // Text Sizing
-$text-page-header: 2rem;
-$text-section-header: 1.75rem;
-$text-large: 1.35rem;
+$text-page-header: 2.25rem;
+$text-section-header: 2rem;
+$text-large: 1.5rem;
 $text-link: 1rem;
 $text-linkSmall: 0.75rem;
-$text-standard: 1.1rem;
-$text-small: 0.85rem;
-$text-tiny: 0.75rem;
+$text-standard: 1.25rem;
+$text-small: 1rem;
+$text-tiny: 0.9rem;
 
 // Typefaces
 $text-font: "Metrophobic";
 $heading-font: "Lato";
 
 %textbox {
+  max-width: 90%;
+  margin: auto;
   padding: 1rem;
   border-radius: 4px;
   background-color: $backgroundTransparent;
   box-shadow: 0 4px 8px $backgroundTransparent;
   color: $primary;
   font-family: $heading-font;
-  font-size: $text-section-header;
+  font-size: $text-page-header;
   font-weight: bold;
   text-align: center;
+}
+
+%paragraph-text {
+  margin: auto;
+  padding: 4rem 0rem;
+  font-family: $text-font;
+  font-size: $text-large;
+  text-align: center;
+
+  @include responsive(desktop) {
+    width: 60%;
+  }
+
+  @include responsive(desktopThin) {
+    width: 70%;
+  }
+
+  @include responsive(tablet) {
+    width: 80%;
+  }
+
+  @include responsive(tabletSmall) {
+    width: 90%;
+  }
+
+  @include responsive(mobile) {
+    width: 95% !important;
+  }
 }

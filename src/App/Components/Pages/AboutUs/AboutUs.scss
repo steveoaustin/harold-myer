@@ -23,29 +23,6 @@
   }
 
   #about-text {
-    padding-bottom: 4rem;
-    font-family: $text-font;
-    font-size: $text-large;
-    text-align: center;
-
-    @include responsive(desktop) {
-      width: 60%;
-    }
-
-    @include responsive(desktopThin) {
-      width: 70%;
-    }
-
-    @include responsive(tablet) {
-      width: 80%;
-    }
-
-    @include responsive(tabletSmall) {
-      width: 90%;
-    }
-
-    @include responsive(mobile) {
-      width: 95% !important;
-    }
+    @extend %paragraph-text;
   }
 }

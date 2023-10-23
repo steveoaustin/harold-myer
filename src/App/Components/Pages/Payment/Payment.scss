@@ -10,33 +10,7 @@
   }
 
   #payment-text {
-    margin: auto;
-    font-family: $text-font;
-    font-size: $text-large;
-    text-align: center;
-    padding: 4rem 0.5rem;
-
-    color: $primary-contrast;
-
-    @include responsive(desktop) {
-      width: 60%;
-    }
-
-    @include responsive(desktopThin) {
-      width: 70%;
-    }
-
-    @include responsive(tablet) {
-      width: 80%;
-    }
-
-    @include responsive(tabletSmall) {
-      width: 90%;
-    }
-
-    @include responsive(mobile) {
-      width: 95% !important;
-    }
+    @extend %paragraph-text;
   }
 
   #payment-options {
