@@ -40,7 +40,7 @@ class Payment extends Component {
           <title>Payment Options</title>
           <meta
             name="description"
-            content="We offer several payment options to accomodate your budget for purchasing fuel at an affordable price"
+            content="We offer several payment options to accommodate your budget for purchasing fuel at an affordable price"
           />
         </Helmet>
         <div id="payment-image" style={{ backgroundImage: `url(${payment})` }}>

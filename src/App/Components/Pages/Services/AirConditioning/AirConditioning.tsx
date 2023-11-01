@@ -39,8 +39,8 @@ class AirConditioning extends Component {
           This is our general service area.
           <br />
           <br />
-          Please contact us if you are close by to see if we can accomodate your
-          needs.
+          Please contact us if you are close by to see if we can accommodate
+          your needs.
           <div className="services-towns">
             <div className="services-town">Bedminster</div>
             <div className="services-town">Buckingham</div>
