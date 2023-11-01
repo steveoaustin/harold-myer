@@ -26,7 +26,7 @@ class ServicesPanel extends Component {
         </NavLink>
         <NavLink
           exact={true}
-          to="services/pipe-wrench"
+          to="services/installation"
           className="servicesPanel-service"
         >
           <img
