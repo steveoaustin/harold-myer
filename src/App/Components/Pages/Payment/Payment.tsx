@@ -15,12 +15,13 @@ const sanityClient = require("@sanity/client");
 class Payment extends Component {
   state: {
     prepayFile: any;
+    showPrepay: boolean;
   };
   client: any;
 
   constructor(props: any) {
     super(props);
-    this.state = { prepayFile: undefined };
+    this.state = { prepayFile: undefined, showPrepay: false };
     this.client = sanityClient({
       projectId: "ts7lblsw",
       dataset: "cms-data",
@@ -30,6 +31,19 @@ class Payment extends Component {
       .fetch(`*[_type == "prepayForm"]{"fileUrl" : form.asset->url}[0]`)
       .then((result: any) => {
         this.setState({ prepayFile: result.fileUrl });
+      });
+    this.client
+      .fetch(
+        `*[_type == "fuelList"]{currentOptions[]{fuelName, fuelPrice, fuelInfo}}[0]`
+      )
+      .then((result: any) => {
+        result.currentOptions.map((fuel: any) => {
+          // show prepay link when in fuel list
+          if (fuel.fuelName.toLowerCase().includes("prepay")) {
+            this.setState({ showPrepay: true });
+          }
+          return null;
+        });
       });
   }
 
@@ -119,7 +133,7 @@ class Payment extends Component {
               Our fixed prepayment plan allows you to purchase some or all of
               your heating oil needs at a set price.
             </div>
-            {this.state.prepayFile !== undefined && (
+            {this.state.prepayFile !== undefined && this.state.showPrepay && (
               <a
                 id="payment-prepayFormDownload"
                 href={this.state.prepayFile}

@@ -11,6 +11,7 @@ const sanityClient = require("@sanity/client");
 
 class Contact extends Component {
   state: {
+    phoneParsed: string;
     phone: string;
     email: string;
     fax: string;
@@ -22,6 +23,7 @@ class Contact extends Component {
   constructor(props: any) {
     super(props);
     this.state = {
+      phoneParsed: "",
       phone: "",
       email: "",
       fax: "",
@@ -39,6 +41,7 @@ class Contact extends Component {
       )
       .then((result: any) => {
         this.setState({
+          phoneParsed: result.phoneNumber.replace(/\D/g, ""),
           phone: result.phoneNumber,
           email: result.emailAddress,
           fax: result.faxNumber,
@@ -68,22 +71,28 @@ class Contact extends Component {
         </div>
         <div id="contact-info">
           <div id="contact-infoHeader">Contact Information</div>
-          <div className="contact-infoItem">
+          <a
+            href={`tel:${this.state.phoneParsed}`}
+            className="contact-infoItem"
+          >
             <Icon className="contact-infoIcon">phone</Icon>
             {this.state.phone}
-          </div>
+          </a>
           <div className="contact-infoItem">
             <Icon className="contact-infoIcon">print</Icon>
             {this.state.fax}
           </div>
-          <div className="contact-infoItem">
+          <a href={`mailto:${this.state.email}`} className="contact-infoItem">
             <Icon className="contact-infoIcon">email</Icon>
             {this.state.email}
-          </div>
-          <div className="contact-infoItem">
+          </a>
+          <a
+            href="https://maps.app.goo.gl/N6cMsNZoCzVK8FdV7"
+            className="contact-infoItem"
+          >
             <Icon className="contact-infoIcon">place</Icon>
             {this.state.address}
-          </div>
+          </a>
           <div className="contact-infoItem">
             Our hours are {this.state.hours}
           </div>

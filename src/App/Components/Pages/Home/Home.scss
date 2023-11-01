@@ -5,6 +5,12 @@
 
   .home-header {
     @extend %textbox;
+
+    @include responsive(tablet) {
+      // margin-top: 2rem;
+      max-width: 75%;
+      font-size: $text-section-header;
+    }
   }
 
   #home-image {
@@ -12,21 +18,19 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    height: 55vh;
+    height: 65vh;
     max-height: 80vw;
-    background-position: bottom;
+    background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
 
     @include responsive(tablet) {
       max-height: 100vw;
-      // background-position: center;
-      // background-size: contain;
     }
   }
 
   #home-fuelContainer {
-    padding: 8rem 0;
+    padding: 8rem 0 6rem 0;
     color: $primary;
     font-family: $text-font;
     text-align: center;
@@ -59,8 +63,7 @@
     }
 
     #home-fuelInfo {
-      padding-top: 4rem;
-      padding-bottom: 2rem;
+      padding-top: 2rem;
       font-size: $text-large;
     }
 
@@ -82,7 +85,7 @@
     }
 
     #home-fuelDate {
-      padding-top: 1rem;
+      padding-top: 2rem;
       font-size: $text-standard;
     }
   }

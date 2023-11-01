@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { NavLink } from "react-router-dom";
 
-import home from "../../../../Media/Images/Compressed/home.jpg";
+import home from "../../../../Media/Images/Compressed/home-optimized.jpg";
 import ServicesPanel from "../../ServicesPanel/ServicesPanel";
 
 const sanityClient = require("@sanity/client");

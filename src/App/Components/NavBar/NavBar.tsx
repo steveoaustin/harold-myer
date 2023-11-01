@@ -7,13 +7,14 @@ import { SlideDown } from "react-slidedown";
 import { Icon } from "@material-ui/core";
 
 import facebook from "../../../Media/graphics/facebook-custom.png";
-import logo from "../../../Media/graphics/logo.svg";
+import logo from "../../../Media/graphics/logo.png";
 
 const sanityClient = require("@sanity/client");
 
 class NavBar extends Component {
   state: {
     phone: string;
+    phoneParsed: string;
     address: string;
     facebook: string;
     showServicesTop: boolean;
@@ -30,6 +31,7 @@ class NavBar extends Component {
     super(props);
     this.state = {
       phone: "",
+      phoneParsed: "",
       address: "",
       facebook: "",
       showServicesTop: false,
@@ -50,10 +52,17 @@ class NavBar extends Component {
       .then((result: any) => {
         this.setState({
           phone: result.phoneNumber,
+          phoneParsed: this.parsePhoneNumber(result.phoneNumber),
           address: result.address,
           facebook: result.facebookLink
         });
       });
+  }
+
+  parsePhoneNumber(phoneStr: string): string {
+    // Remove all non-numeric characters from the phone string
+    let parsedNumber = phoneStr.replace(/\D/g, "");
+    return parsedNumber;
   }
 
   componentDidMount() {
@@ -164,10 +173,10 @@ class NavBar extends Component {
         >
           <img id="navBar-facebookLogo" src={facebook} alt="facebook link" />
         </div>
-        <div id="navBar-phoneNumber">
+        <a href={`tel:${this.state.phoneParsed}`} id="navBar-phoneNumber">
           <Icon className="navBar-infoIcon">phone</Icon>
           <span id="navBar-phoneNumberText">{this.state.phone}</span>
-        </div>
+        </a>
         <div id="navBar-address">
           <NavLink
             exact={true}
