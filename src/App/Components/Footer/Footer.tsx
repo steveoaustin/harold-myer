@@ -3,6 +3,8 @@ import "./Footer.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
+import privacyPolicy from "../../../Media/documents/Privacy Policy.pdf";
+import termsOfService from "../../../Media/documents/Terms of Service.pdf";
 import facebook from "../../../Media/graphics/facebook-custom.png";
 import logo from "../../../Media/graphics/logo.png";
 import Bam from "../Bam/Bam";
@@ -43,6 +45,25 @@ class Footer extends Component {
         </NavLink>
         <div id="footer-links">{this.footerLinks()}</div>
         <div id="footer-info">
+          <div id="footer-docs">
+            <a
+              className="footer-doc"
+              href={termsOfService}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terms of Service
+            </a>
+
+            <a
+              className="footer-doc"
+              href={privacyPolicy}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>
+          </div>
           <div
             id="footer-facebookLink"
             onClick={() => (window.location.href = this.state.facebookLink)}
